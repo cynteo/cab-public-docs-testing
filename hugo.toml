@@ -5,5 +5,20 @@ theme = 'hugo-theme-relearn'
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+images = ['images/cto_logo.png']
+
 [params]
-  themeVariant = 'neon'
+base = '/CAB-PUBLIC-DOCS-TESTING'
+images = ['images/cto_logo.png']
+themeVariant = [
+  { identifier = 'auto', name = 'Zen Light/Dark', auto = [
+    'zen-light',
+    'zen-dark',
+  ] },
+  { identifier = 'zen-light' },
+  { identifier = 'zen-dark' },
+]
+disableLandingPageButton = false
+landingPageName = '<i class="fa-fw fas fa-home"></i> Home'
+titleSeparator = '|'

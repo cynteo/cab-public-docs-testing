@@ -8,14 +8,14 @@
     <language>en-us</language>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>1. Quick Links</title>
+      <title>Quick Links</title>
       <link>http://localhost:1313/quicklinks/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/quicklinks/index.html</guid>
       <description>🚀 Quick Links Get Started - Deployment guide Features - What Alert Bridge can do Troubleshooting - Common issues Support - Get help</description>
     </item>
     <item>
-      <title>2. Getting Started</title>
+      <title>Getting Started</title>
       <link>http://localhost:1313/gettingstarted/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/gettingstarted/index.html</guid>
