@@ -2,7 +2,6 @@
 draft: false
 title: Action Group Setup Guide
 linktitle: Action Group Setup Guide
-weight: 1
 description: Bicep Quickstart Guidance for the Azure Verified Modules (AVM) program
 ---
 

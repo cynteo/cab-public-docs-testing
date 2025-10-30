@@ -2,9 +2,6 @@ baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
 title = 'Cynteo Alert Bridge Docs'
 theme = 'hugo-theme-relearn'
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
 
 images = ['images/cto_logo.png']
 
@@ -32,23 +29,6 @@ disableAnchorScrolling = false
 alwaysopen = true
 collapsibleMenu = false
 disableRootBreadcrumb = false
-# clarityId = 'prb1m4vask' # AVM-Test
-clarityId = 'p0l7yeco82' # Azure-Verified-Modules
-custom_js = ['js/tags.js']
-
-[markup]
-defaultMarkdownHandler = 'goldmark'
-[markup.tableOfContents]
-endLevel = 6
-ordered = false
-startLevel = 2
-
-[markup.goldmark.renderer]
-unsafe = true
-hardWraps = true
-
-[markup.goldmark.parser]
-autoHeadingID = true
 
 [[menu.defined]]
 identifier = 'overview'
@@ -58,11 +38,46 @@ pageRef = '/overview'
 weight = 1
 params = { alwaysopen = true, collapsibleMenu = true }
 
+[[menu.defined]]
+identifier = 'quicklinks'
+parent = 'home'
+name = 'Quick Links'
+pageRef = '/quicklinks'
+weight = 2
+params = { alwaysopen = true, collapsibleMenu = true }
+
 
 [[menu.defined]]
 identifier = 'usage'
 parent = 'home'
 name = 'Usage Guide'
 pageRef = '/usage'
+weight = 3
+params = { alwaysopen = true, collapsibleMenu = true }
+
+
+[[menu.defined]]
+identifier = 'actionGroup'
+parent = 'usage'
+name = 'Action Group Setup'
+pageRef = '/usage/actiongroup/actionGroup'
+weight = 3
+params = { alwaysopen = true, collapsibleMenu = true }
+
+
+[[menu.defined]]
+identifier = 'priorityMapping'
+parent = 'usage'
+name = 'Priority Mapping Setup'
+pageRef = '/usage/prioritymapping/priorityMapping'
+weight = 3
+params = { alwaysopen = true, collapsibleMenu = true }
+
+
+[[menu.defined]]
+identifier = 'severityFiltering'
+parent = 'usage'
+name = 'Severity Filtering Setup'
+pageRef = '/usage/severityfiltering/severityFiltering'
 weight = 3
 params = { alwaysopen = true, collapsibleMenu = true }

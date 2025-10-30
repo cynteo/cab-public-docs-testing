@@ -5,25 +5,25 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.152.2">
     <meta name="generator" content="Relearn 8.1.1+98ff131315b1d0ec86cbae2fef7a4cda5c37f526">
-    <meta name="description" content="Usage Guidance for the Cynteo Alert Brige">
+    <meta name="description" content="Configure how Azure alert severities map to SolarWinds priorities">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="http://localhost:1313/images/cto_logo.png">
-    <meta name="twitter:title" content="ActionGroup | Cynteo Alert Bridge Docs">
-    <meta name="twitter:description" content="Usage Guidance for the Cynteo Alert Brige">
-    <meta property="og:url" content="http://localhost:1313/usage/actiongroup/index.html">
+    <meta name="twitter:title" content="Priority Mapping | Cynteo Alert Bridge Docs">
+    <meta name="twitter:description" content="Configure how Azure alert severities map to SolarWinds priorities">
+    <meta property="og:url" content="http://localhost:1313/usage/prioritymapping/prioritymapping/index.html">
     <meta property="og:site_name" content="Cynteo Alert Bridge Docs">
-    <meta property="og:title" content="ActionGroup | Cynteo Alert Bridge Docs">
-    <meta property="og:description" content="Usage Guidance for the Cynteo Alert Brige">
+    <meta property="og:title" content="Priority Mapping | Cynteo Alert Bridge Docs">
+    <meta property="og:description" content="Configure how Azure alert severities map to SolarWinds priorities">
     <meta property="og:locale" content="en_us">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Usage Guide">
     <meta property="og:image" content="http://localhost:1313/images/cto_logo.png">
-    <meta itemprop="name" content="ActionGroup | Cynteo Alert Bridge Docs">
-    <meta itemprop="description" content="Usage Guidance for the Cynteo Alert Brige">
-    <meta itemprop="wordCount" content="6">
+    <meta itemprop="name" content="Priority Mapping | Cynteo Alert Bridge Docs">
+    <meta itemprop="description" content="Configure how Azure alert severities map to SolarWinds priorities">
+    <meta itemprop="wordCount" content="418">
     <meta itemprop="image" content="http://localhost:1313/images/cto_logo.png">
-    <title>ActionGroup | Cynteo Alert Bridge Docs</title>
-    <link href="/usage/actiongroup/index.xml" rel="alternate" type="application/rss+xml" title="ActionGroup | Cynteo Alert Bridge Docs">
+    <title>Priority Mapping | Cynteo Alert Bridge Docs</title>
     <link href="/images/favicon.png?1761855003" rel="icon" type="image/png">
     <link href="/css/auto-complete/auto-complete.min.css?1761855003" rel="stylesheet">
     <script src="/js/auto-complete/auto-complete.min.js?1761855003" defer></script>
@@ -49,9 +49,9 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/usage\/actiongroup\/index.html';
-      window.relearn.relBasePath='..\/..';
-      window.relearn.relBaseUri='..\/..';
+      window.relearn.path='\/usage\/prioritymapping\/prioritymapping\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
@@ -99,7 +99,7 @@
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-url="/usage/actiongroup/index.html">
+  <body class="mobile-support html" data-url="/usage/prioritymapping/prioritymapping/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -115,21 +115,44 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#summary">Summary</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#default-mapping">Default Mapping</a></li>
+    <li><a href="#customizing-priority-mapping">Customizing Priority Mapping</a></li>
+    <li><a href="#solarwinds-priority-values">SolarWinds Priority Values</a></li>
+    <li><a href="#custom-priority-examples">Custom Priority Examples</a>
+      <ul>
+        <li><a href="#example-1-escalated-priorities">Example 1: Escalated Priorities</a></li>
+        <li><a href="#example-2-custom-priority-names">Example 2: Custom Priority Names</a></li>
+        <li><a href="#example-3-simplified-mapping">Example 3: Simplified Mapping</a></li>
+        <li><a href="#example-4-environment-specific">Example 4: Environment-Specific</a></li>
+      </ul>
+    </li>
+    <li><a href="#verifying-priority-mapping">Verifying Priority Mapping</a>
+      <ul>
+        <li><a href="#check-the-solarwinds-incident">Check the SolarWinds Incident</a></li>
+      </ul>
+    </li>
+    <li><a href="#priority-based-routing">Priority-Based Routing</a>
+      <ul>
+        <li><a href="#solarwinds-assignment-rules">SolarWinds Assignment Rules</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-priority-scenarios">Advanced Priority Scenarios</a></li>
+    <li><a href="#see-also">See Also</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Cynteo Alert Bridge Docs</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/usage/index.html"><span itemprop="name">Usage Guide</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Action Group Setup Guide</span><meta itemprop="position" content="3"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Cynteo Alert Bridge Docs</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/usage/index.html"><span itemprop="name">Usage Guide</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Priority Mapping</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/usage/prioritymapping/prioritymapping/index.html" title="Priority Mapping (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn interactive cstyle link noborder notitle"><a href="/usage/index.html" title="Usage Guide (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/usage/actiongroup/actiongroup/index.html" title="Action Group Setup Guide (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn interactive cstyle link noborder notitle"><a href="/usage/actiongroup/index.html" title="ActionGroup (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -144,16 +167,124 @@
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+      <main id="R-body-inner" class="highlightable usage" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="actiongroup">ActionGroup</h1>
+<h1 id="priority-mapping">Priority Mapping</h1>
 
-<h2 id="summary">Summary</h2>
-<p>This section describes usage guidance.</p>
+<h1 id="priority-mapping">Priority Mapping</h1>
+<p>Learn how to map Azure Monitor alert severities to SolarWinds Service Desk priority levels.</p>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>Azure Monitor uses <strong>severities</strong> (Sev0-Sev4), while SolarWinds uses <strong>priorities</strong> (Critical, High, Medium, Low). Alert Bridge maps between these automatically.</p>
+<hr>
+<h2 id="default-mapping">Default Mapping</h2>
+<p>Out of the box, Alert Bridge uses this mapping:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Azure Severity</th>
+          <th>SolarWinds Priority</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Sev0</strong></td>
+          <td>Critical</td>
+          <td>System down, immediate action required</td>
+      </tr>
+      <tr>
+          <td><strong>Sev1</strong></td>
+          <td>High</td>
+          <td>Major functionality impaired</td>
+      </tr>
+      <tr>
+          <td><strong>Sev2</strong></td>
+          <td>Medium</td>
+          <td>Moderate impact, workaround available</td>
+      </tr>
+      <tr>
+          <td><strong>Sev3</strong></td>
+          <td>Low</td>
+          <td>Minor issue, minimal impact</td>
+      </tr>
+      <tr>
+          <td><strong>Sev4</strong></td>
+          <td>Low</td>
+          <td>Informational, no immediate action</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="customizing-priority-mapping">Customizing Priority Mapping</h2>
+<p>Priority mapping is configured during deployment. The solution can be customized to match your organization&rsquo;s SolarWinds priority structure.</p>
+<p><strong>To request a priority mapping change</strong>, contact <a href="mailto:support@cynteocloud.com" rel="external">support@cynteocloud.com</a> with your desired mapping.</p>
+<hr>
+<h2 id="solarwinds-priority-values">SolarWinds Priority Values</h2>
+<p>Your SolarWinds instance may have different priority names. Common priority structures include:</p>
+<p><strong>Standard SolarWinds Priorities:</strong></p>
+<ul>
+<li>Critical</li>
+<li>High</li>
+<li>Medium</li>
+<li>Low</li>
+</ul>
+<p>Your organization may use custom priority names. The mapping is configured to match your specific SolarWinds priority structure during deployment.</p>
+<hr>
+<h2 id="custom-priority-examples">Custom Priority Examples</h2>
+<p>Alert Bridge supports various priority mapping strategies:</p>
+<h3 id="example-1-escalated-priorities">Example 1: Escalated Priorities</h3>
+<p>All critical and error alerts mapped to high priority for faster response.</p>
+<h3 id="example-2-custom-priority-names">Example 2: Custom Priority Names</h3>
+<p>Organizations using custom priority names (e.g., &ldquo;P1 - Critical&rdquo;, &ldquo;P2 - Urgent&rdquo;) can configure the mapping accordingly.</p>
+<h3 id="example-3-simplified-mapping">Example 3: Simplified Mapping</h3>
+<p>Some organizations prefer to use only two priority levels (Critical and Normal) for simplicity.</p>
+<h3 id="example-4-environment-specific">Example 4: Environment-Specific</h3>
+<p>Different environments (Production vs Development) can use different priority mappings to reflect business impact.</p>
+<hr>
+<h2 id="verifying-priority-mapping">Verifying Priority Mapping</h2>
+<p>When an Azure alert fires, you can verify the priority mapping worked correctly:</p>
+<h3 id="check-the-solarwinds-incident">Check the SolarWinds Incident</h3>
+<ol>
+<li>Open SolarWinds Service Desk</li>
+<li>Find the incident created from the alert</li>
+<li>Verify the priority field matches expectations</li>
+</ol>
+<p>For example, an Azure Sev1 alert should create a High priority incident (based on default mapping).</p>
+<hr>
+<h2 id="priority-based-routing">Priority-Based Routing</h2>
+<p>Different priority levels can trigger different response workflows in SolarWinds:</p>
+<h3 id="solarwinds-assignment-rules">SolarWinds Assignment Rules</h3>
+<p>SolarWinds supports automatic assignment based on priority:</p>
+<ul>
+<li><strong>Critical Priority</strong> → Route to On-Call Team</li>
+<li><strong>High Priority</strong> → Route to Infrastructure Team</li>
+<li><strong>Medium/Low Priority</strong> → Route to Operations Team</li>
+</ul>
+<p>This ensures the right team receives alerts based on severity.</p>
+<hr>
+<h2 id="advanced-priority-scenarios">Advanced Priority Scenarios</h2>
+<p>Alert Bridge supports advanced priority mapping strategies including:</p>
+<ul>
+<li><strong>Resource Type Based</strong> - Different resources can have different priority mappings</li>
+<li><strong>Environment Based</strong> - Production alerts prioritized higher than development</li>
+<li><strong>Time-Based</strong> - After-hours alerts automatically escalated</li>
+<li><strong>Tag-Based</strong> - Resource tags influence priority assignment</li>
+</ul>
+<p>Contact <a href="mailto:support@cynteocloud.com" rel="external">support@cynteocloud.com</a> to discuss custom mapping requirements.</p>
+<hr>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../reference/environment-variables">Configuration Options</a> - Available settings</li>
+<li><a href="./severity-filtering">Severity Filtering</a> - Filter by severity</li>
+<li><a href="./custom-categories">Custom Categories</a> - SolarWinds categories</li>
+</ul>
+<hr>
+<p><strong>Questions?</strong> Contact <a href="mailto:support@cynteocloud.com" rel="external">support@cynteocloud.com</a></p>
 
   <footer class="footline">
   </footer>
@@ -204,7 +335,7 @@
             <li class="" data-nav-url="/quicklinks/index.html"><a class="padding" href="/quicklinks/index.html">Quick Links</a></li>
             <li class="parent alwaysopen " data-nav-url="/usage/index.html"><input type="checkbox" id="R-section-9366282e11c151558bdfaab4a264aa1b" aria-controls="R-subsections-9366282e11c151558bdfaab4a264aa1b" checked><label for="R-section-9366282e11c151558bdfaab4a264aa1b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Usage Guide</span></label><a class="padding" href="/usage/index.html">Usage Guide</a><ul id="R-subsections-9366282e11c151558bdfaab4a264aa1b" class="collapsible-menu">
             <li class="" data-nav-url="/usage/actiongroup/actiongroup/index.html"><a class="padding" href="/usage/actiongroup/actiongroup/index.html">Action Group Setup</a></li>
-            <li class="" data-nav-url="/usage/prioritymapping/prioritymapping/index.html"><a class="padding" href="/usage/prioritymapping/prioritymapping/index.html">Priority Mapping Setup</a></li>
+            <li class="active " data-nav-url="/usage/prioritymapping/prioritymapping/index.html"><a class="padding" href="/usage/prioritymapping/prioritymapping/index.html">Priority Mapping Setup</a></li>
             <li class="" data-nav-url="/usage/severityfiltering/severityfiltering/index.html"><a class="padding" href="/usage/severityfiltering/severityfiltering/index.html">Severity Filtering Setup</a></li></ul></li>
           </ul>
         </div>

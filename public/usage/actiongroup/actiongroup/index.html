@@ -17,34 +17,34 @@
     <meta property="og:description" content="Bicep Quickstart Guidance for the Azure Verified Modules (AVM) program">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="Cynteo Alert Bridge Docs">
+    <meta property="article:section" content="Usage Guide">
     <meta property="og:image" content="http://localhost:1313/images/cto_logo.png">
     <meta itemprop="name" content="Action Group Setup Guide | Cynteo Alert Bridge Docs">
     <meta itemprop="description" content="Bicep Quickstart Guidance for the Azure Verified Modules (AVM) program">
     <meta itemprop="wordCount" content="1001">
     <meta itemprop="image" content="http://localhost:1313/images/cto_logo.png">
     <title>Action Group Setup Guide | Cynteo Alert Bridge Docs</title>
-    <link href="/images/favicon.png?1761851369" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1761851369" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1761851369" defer></script>
-    <script src="/js/search-lunr.js?1761851369" defer></script>
-    <script src="/js/search.js?1761851369" defer></script>
+    <link href="/images/favicon.png?1761855003" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1761855003" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761855003" defer></script>
+    <script src="/js/search-lunr.js?1761855003" defer></script>
+    <script src="/js/search.js?1761855003" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1761851369";
+      window.relearn.index_js_url="/searchindex.en.js?1761855003";
     </script>
-    <script src="/js/lunr/lunr.min.js?1761851369" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1761851369" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1761851369" defer></script>
-    <script src="/js/lunr/lunr.en.min.js?1761851369" defer></script>
+    <script src="/js/lunr/lunr.min.js?1761855003" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761855003" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761855003" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761855003" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['en'];
     </script>
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761851369" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761851369" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761851369" rel="stylesheet">
-    <link href="/css/theme.css?1761851369" rel="stylesheet">
-    <link href="/css/format-html.css?1761851369" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761855003" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761855003" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761855003" rel="stylesheet">
+    <link href="/css/theme.css?1761855003" rel="stylesheet">
+    <link href="/css/format-html.css?1761855003" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -120,27 +120,9 @@
     <li><a href="#step-by-step-guide">Step-by-Step Guide</a>
       <ul>
         <li><a href="#step-1-get-webhook-url">Step 1: Get Webhook URL</a></li>
-        <li><a href="#step-2-create-action-group">Step 2: Create Action Group</a>
-          <ul>
-            <li><a href="#navigate-to-action-groups">Navigate to Action Groups</a></li>
-            <li><a href="#basics-tab">Basics Tab</a></li>
-            <li><a href="#notifications-tab">Notifications Tab</a></li>
-            <li><a href="#actions-tab">Actions Tab</a></li>
-            <li><a href="#tags-tab-optional">Tags Tab (Optional)</a></li>
-            <li><a href="#review-and-create">Review and Create</a></li>
-          </ul>
-        </li>
-        <li><a href="#step-3-test-action-group">Step 3: Test Action Group</a>
-          <ul>
-            <li><a href="#manual-test">Manual Test</a></li>
-            <li><a href="#verify-results">Verify Results</a></li>
-          </ul>
-        </li>
-        <li><a href="#step-4-add-to-alert-rules">Step 4: Add to Alert Rules</a>
-          <ul>
-            <li><a href="#for-each-alert-rule">For Each Alert Rule:</a></li>
-          </ul>
-        </li>
+        <li><a href="#step-2-create-action-group">Step 2: Create Action Group</a></li>
+        <li><a href="#step-3-test-action-group">Step 3: Test Action Group</a></li>
+        <li><a href="#step-4-add-to-alert-rules">Step 4: Add to Alert Rules</a></li>
       </ul>
     </li>
     <li><a href="#advanced-configuration">Advanced Configuration</a>
@@ -182,14 +164,14 @@
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Cynteo Alert Bridge Docs</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Action Group Setup Guide</span><meta itemprop="position" content="2"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Cynteo Alert Bridge Docs</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/usage/index.html"><span itemprop="name">Usage Guide</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/usage/actiongroup/index.html"><span itemprop="name">Action Group Setup Guide</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Action Group Setup Guide</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/index.html" title="Cynteo Alert Bridge Docs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn interactive cstyle link noborder notitle"><a href="/usage/actiongroup/index.html" title="ActionGroup (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn interactive cstyle link noborder notitle"><a href="/overview/index.html" title="Overview (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn interactive cstyle link noborder notitle"><a href="/usage/severityfiltering/severityfiltering/index.html" title="Severity Filtering (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -524,9 +506,8 @@ Tags: Environment=Production, System=ITSM</code></pre></div>
       <div id="R-header-topbar" class="default-animation"></div>
       <div id="R-header-wrapper" class="default-animation">
         <div id="R-header" class="default-animation">
-<a id="R-logo" href="/index.html">
-  <img src="/images/favicon.png" alt="brand logo">
-</a>
+<img src="/images/cto_logo.png" width="50" height="50" style="vertical-align:bottom">
+<a id="R-logo" class="R-default" href="/index.html">          Cynteo Alert Bridge Docs</a>
         </div>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -561,7 +542,11 @@ Tags: Environment=Production, System=ITSM</code></pre></div>
         <div class="R-sidebarmenu R-shortcutmenu-defined">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-url="/overview/index.html"><a class="padding" href="/overview/index.html">Overview</a></li>
-            <li class="" data-nav-url="/usage/index.html"><a class="padding" href="/usage/index.html">Usage Guide</a></li>
+            <li class="" data-nav-url="/quicklinks/index.html"><a class="padding" href="/quicklinks/index.html">Quick Links</a></li>
+            <li class="parent alwaysopen " data-nav-url="/usage/index.html"><input type="checkbox" id="R-section-9366282e11c151558bdfaab4a264aa1b" aria-controls="R-subsections-9366282e11c151558bdfaab4a264aa1b" checked><label for="R-section-9366282e11c151558bdfaab4a264aa1b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Usage Guide</span></label><a class="padding" href="/usage/index.html">Usage Guide</a><ul id="R-subsections-9366282e11c151558bdfaab4a264aa1b" class="collapsible-menu">
+            <li class="active " data-nav-url="/usage/actiongroup/actiongroup/index.html"><a class="padding" href="/usage/actiongroup/actiongroup/index.html">Action Group Setup</a></li>
+            <li class="" data-nav-url="/usage/prioritymapping/prioritymapping/index.html"><a class="padding" href="/usage/prioritymapping/prioritymapping/index.html">Priority Mapping Setup</a></li>
+            <li class="" data-nav-url="/usage/severityfiltering/severityfiltering/index.html"><a class="padding" href="/usage/severityfiltering/severityfiltering/index.html">Severity Filtering Setup</a></li></ul></li>
           </ul>
         </div>
         <div id="R-footer-margin"></div>
@@ -591,8 +576,8 @@ Tags: Environment=Production, System=ITSM</code></pre></div>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1761851369" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761851369" defer></script>
-    <script src="/js/theme.js?1761851369" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1761855003" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761855003" defer></script>
+    <script src="/js/theme.js?1761855003" defer></script>
   </body>
 </html>

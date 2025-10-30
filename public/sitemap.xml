@@ -7,7 +7,19 @@
     <loc>http://localhost:1313/quicklinks/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/usage/prioritymapping/prioritymapping/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/usage/actiongroup/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/usage/severityfiltering/severityfiltering/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/usage/index.html</loc>
+  </url>
+  <url>
+    <loc>http://localhost:1313/usage/actiongroup/actiongroup/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/categories/index.html</loc>
