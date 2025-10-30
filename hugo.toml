@@ -1,7 +1,9 @@
 baseURL = 'http://localhost:1313/'
 languageCode = 'en-us'
-title = 'CynteoDocs'
-theme = 'ananke'
+title = 'Cynteo Alert Bridge Docs'
+theme = 'hugo-theme-relearn'
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+[params]
+  themeVariant = 'neon'
