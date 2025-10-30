@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Relearn 8.1.1+9d74be278d6e8456f2f18305c9b27e38bc2de91c">
+    <meta name="description" content="Azure Monitor Configuration Configure Azure Monitor alerts to work with Alert Bridge.
+Overview Cynteo Alert Bridge integrates with Azure Monitor using Action Groups and Common Alert Schema. This guide shows you how to configure your alerts properly.
+Prerequisites Azure subscription with Monitor alerts configured Contributor access to create/modify alert rules Alert Bridge deployed (Quick Start) Understanding Alert Flow Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWindsStep 1: Create Action Group 1.1 Navigate to Action Groups Open Azure Portal Search for “Monitor” Click “Alerts” in left menu Click “Action groups” Click &#34;&#43; Create&#34; 1.2 Configure Basics Subscription: Your Azure subscription
+Resource Group: Same as Alert Bridge (recommended)
+Region: Global (default)
+Action group name: alert-bridge-solarwinds
+Display name: SolarWinds (shows in alert emails)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Getting Started :: Cynteo Alert Bridge Docs">
+    <meta name="twitter:description" content="Azure Monitor Configuration Configure Azure Monitor alerts to work with Alert Bridge.
+Overview Cynteo Alert Bridge integrates with Azure Monitor using Action Groups and Common Alert Schema. This guide shows you how to configure your alerts properly.
+Prerequisites Azure subscription with Monitor alerts configured Contributor access to create/modify alert rules Alert Bridge deployed (Quick Start) Understanding Alert Flow Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWindsStep 1: Create Action Group 1.1 Navigate to Action Groups Open Azure Portal Search for “Monitor” Click “Alerts” in left menu Click “Action groups” Click &#34;&#43; Create&#34; 1.2 Configure Basics Subscription: Your Azure subscription
+Resource Group: Same as Alert Bridge (recommended)
+Region: Global (default)
+Action group name: alert-bridge-solarwinds
+Display name: SolarWinds (shows in alert emails)">
+    <meta property="og:url" content="http://localhost:1313/gettingstarted/index.html">
+    <meta property="og:site_name" content="Cynteo Alert Bridge Docs">
+    <meta property="og:title" content="Getting Started :: Cynteo Alert Bridge Docs">
+    <meta property="og:description" content="Azure Monitor Configuration Configure Azure Monitor alerts to work with Alert Bridge.
+Overview Cynteo Alert Bridge integrates with Azure Monitor using Action Groups and Common Alert Schema. This guide shows you how to configure your alerts properly.
+Prerequisites Azure subscription with Monitor alerts configured Contributor access to create/modify alert rules Alert Bridge deployed (Quick Start) Understanding Alert Flow Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWindsStep 1: Create Action Group 1.1 Navigate to Action Groups Open Azure Portal Search for “Monitor” Click “Alerts” in left menu Click “Action groups” Click &#34;&#43; Create&#34; 1.2 Configure Basics Subscription: Your Azure subscription
+Resource Group: Same as Alert Bridge (recommended)
+Region: Global (default)
+Action group name: alert-bridge-solarwinds
+Display name: SolarWinds (shows in alert emails)">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Cynteo Alert Bridge Docs">
+    <meta itemprop="name" content="Getting Started :: Cynteo Alert Bridge Docs">
+    <meta itemprop="description" content="Azure Monitor Configuration Configure Azure Monitor alerts to work with Alert Bridge.
+Overview Cynteo Alert Bridge integrates with Azure Monitor using Action Groups and Common Alert Schema. This guide shows you how to configure your alerts properly.
+Prerequisites Azure subscription with Monitor alerts configured Contributor access to create/modify alert rules Alert Bridge deployed (Quick Start) Understanding Alert Flow Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWindsStep 1: Create Action Group 1.1 Navigate to Action Groups Open Azure Portal Search for “Monitor” Click “Alerts” in left menu Click “Action groups” Click &#34;&#43; Create&#34; 1.2 Configure Basics Subscription: Your Azure subscription
+Resource Group: Same as Alert Bridge (recommended)
+Region: Global (default)
+Action group name: alert-bridge-solarwinds
+Display name: SolarWinds (shows in alert emails)">
+    <meta itemprop="wordCount" content="924">
+    <title>Getting Started :: Cynteo Alert Bridge Docs</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1761838053" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761838053" defer></script>
+    <script src="/js/search-lunr.js?1761838053" defer></script>
+    <script src="/js/search.js?1761838053" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1761838053";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1761838053" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761838053" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761838053" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761838053" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761838053" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761838053" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761838053" rel="stylesheet">
+    <link href="/css/theme.css?1761838053" rel="stylesheet">
+    <link href="/css/format-html.css?1761838053" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/gettingstarted\/index.html';
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'neon' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/gettingstarted/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#understanding-alert-flow">Understanding Alert Flow</a></li>
+    <li><a href="#step-1-create-action-group">Step 1: Create Action Group</a>
+      <ul>
+        <li><a href="#11-navigate-to-action-groups">1.1 Navigate to Action Groups</a></li>
+        <li><a href="#12-configure-basics">1.2 Configure Basics</a></li>
+        <li><a href="#13-add-webhook-action">1.3 Add Webhook Action</a></li>
+        <li><a href="#14-review-and-create">1.4 Review and Create</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-2-configure-existing-alerts">Step 2: Configure Existing Alerts</a>
+      <ul>
+        <li><a href="#add-action-group-to-alert-rule">Add Action Group to Alert Rule</a></li>
+      </ul>
+    </li>
+    <li><a href="#step-3-create-new-alert-rule-example">Step 3: Create New Alert Rule (Example)</a>
+      <ul>
+        <li><a href="#example-cpu-alert-for-vm">Example: CPU Alert for VM</a></li>
+      </ul>
+    </li>
+    <li><a href="#alert-severity-mapping">Alert Severity Mapping</a></li>
+    <li><a href="#common-alert-schema">Common Alert Schema</a>
+      <ul>
+        <li><a href="#why-common-alert-schema-is-required">Why Common Alert Schema is Required</a></li>
+        <li><a href="#how-to-enable">How to Enable</a></li>
+      </ul>
+    </li>
+    <li><a href="#alert-types-supported">Alert Types Supported</a>
+      <ul>
+        <li><a href="#metric-alerts">Metric Alerts</a></li>
+        <li><a href="#log-alerts">Log Alerts</a></li>
+        <li><a href="#activity-log-alerts">Activity Log Alerts</a></li>
+        <li><a href="#resource-health-alerts">Resource Health Alerts</a></li>
+      </ul>
+    </li>
+    <li><a href="#best-practices">Best Practices</a>
+      <ul>
+        <li><a href="#1-use-descriptive-alert-names">1. Use Descriptive Alert Names</a></li>
+        <li><a href="#2-set-appropriate-severity">2. Set Appropriate Severity</a></li>
+        <li><a href="#3-add-helpful-descriptions">3. Add Helpful Descriptions</a></li>
+        <li><a href="#4-use-dynamic-thresholds-when-applicable">4. Use Dynamic Thresholds (when applicable)</a></li>
+        <li><a href="#5-configure-alert-suppression">5. Configure Alert Suppression</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-your-alerts">Testing Your Alerts</a>
+      <ul>
+        <li><a href="#method-1-lower-threshold-temporarily">Method 1: Lower Threshold Temporarily</a></li>
+        <li><a href="#method-2-use-test-action-group">Method 2: Use Test Action Group</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#alert-fires-but-no-incident">Alert Fires But No Incident</a></li>
+        <li><a href="#incident-missing-information">Incident Missing Information</a></li>
+        <li><a href="#duplicate-incidents">Duplicate Incidents</a></li>
+      </ul>
+    </li>
+    <li><a href="#advanced-configuration">Advanced Configuration</a>
+      <ul>
+        <li><a href="#multi-subscription-setup">Multi-Subscription Setup</a></li>
+        <li><a href="#filtering-by-resource-group">Filtering by Resource Group</a></li>
+        <li><a href="#custom-fields">Custom Fields</a></li>
+      </ul>
+    </li>
+    <li><a href="#next-steps">Next Steps</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Cynteo Alert Bridge Docs</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Getting Started</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><a href="/quicklinks/index.html" title="Quick Links (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle"><span><i class="fa-fw fas fa-chevron-right"></i></span></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="getting-started">Getting Started</h1>
+
+<h1 id="azure-monitor-configuration">Azure Monitor Configuration</h1>
+<p>Configure Azure Monitor alerts to work with Alert Bridge.</p>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>Cynteo Alert Bridge integrates with Azure Monitor using <strong>Action Groups</strong> and <strong>Common Alert Schema</strong>. This guide shows you how to configure your alerts properly.</p>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Azure subscription with Monitor alerts configured</li>
+<li>Contributor access to create/modify alert rules</li>
+<li>Alert Bridge deployed (<a href="./quickstart">Quick Start</a>)</li>
+</ul>
+<hr>
+<h2 id="understanding-alert-flow">Understanding Alert Flow</h2>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWinds</code></pre></div>
+<hr>
+<h2 id="step-1-create-action-group">Step 1: Create Action Group</h2>
+<h3 id="11-navigate-to-action-groups">1.1 Navigate to Action Groups</h3>
+<ol>
+<li>Open <a href="https://portal.azure.com" rel="external">Azure Portal</a></li>
+<li>Search for <strong>&ldquo;Monitor&rdquo;</strong></li>
+<li>Click <strong>&ldquo;Alerts&rdquo;</strong> in left menu</li>
+<li>Click <strong>&ldquo;Action groups&rdquo;</strong></li>
+<li>Click <strong>&quot;+ Create&quot;</strong></li>
+</ol>
+<h3 id="12-configure-basics">1.2 Configure Basics</h3>
+<p><strong>Subscription:</strong> Your Azure subscription<br>
+<strong>Resource Group:</strong> Same as Alert Bridge (recommended)<br>
+<strong>Region:</strong> Global (default)<br>
+<strong>Action group name:</strong> <code>alert-bridge-solarwinds</code><br>
+<strong>Display name:</strong> <code>SolarWinds</code> (shows in alert emails)</p>
+<h3 id="13-add-webhook-action">1.3 Add Webhook Action</h3>
+<p>Click <strong>&ldquo;Next: Actions&rdquo;</strong></p>
+<p><strong>Action type:</strong> Webhook<br>
+<strong>Name:</strong> <code>Send to SolarWinds</code><br>
+<strong>URI:</strong> Paste your Alert Bridge webhook URL</p>
+<p><strong>To get webhook URL:</strong></p>
+<ol>
+<li>Go to your Alert Bridge resource group</li>
+<li>Click the Logic App (name: <code>logicapp-*</code>)</li>
+<li>Click &ldquo;Overview&rdquo;</li>
+<li>Copy &ldquo;Callback URL&rdquo;</li>
+</ol>
+<p><strong>✅ CRITICAL:</strong> Check <strong>&ldquo;Enable the common alert schema&rdquo;</strong></p>
+<p>This ensures alerts are sent in the correct format!</p>
+<h3 id="14-review-and-create">1.4 Review and Create</h3>
+<p>Click <strong>&ldquo;Review + create&rdquo;</strong> → <strong>&ldquo;Create&rdquo;</strong></p>
+<hr>
+<h2 id="step-2-configure-existing-alerts">Step 2: Configure Existing Alerts</h2>
+<h3 id="add-action-group-to-alert-rule">Add Action Group to Alert Rule</h3>
+<p>For each alert you want sent to SolarWinds:</p>
+<ol>
+<li><strong>Monitor</strong> → <strong>Alerts</strong> → <strong>Alert rules</strong></li>
+<li>Select an alert rule</li>
+<li>Click <strong>&ldquo;Edit&rdquo;</strong> (or <strong>&ldquo;Manage actions&rdquo;</strong>)</li>
+<li>Under <strong>&ldquo;Action groups&rdquo;</strong>, click <strong>&quot;+ Add action group&quot;</strong></li>
+<li>Select <code>alert-bridge-solarwinds</code></li>
+<li>Click <strong>&ldquo;Save&rdquo;</strong></li>
+</ol>
+<p><strong>Repeat for all relevant alert rules.</strong></p>
+<hr>
+<h2 id="step-3-create-new-alert-rule-example">Step 3: Create New Alert Rule (Example)</h2>
+<h3 id="example-cpu-alert-for-vm">Example: CPU Alert for VM</h3>
+<h4 id="31-create-alert-rule">3.1 Create Alert Rule</h4>
+<ol>
+<li>Navigate to a <strong>Virtual Machine</strong></li>
+<li>Click <strong>&ldquo;Alerts&rdquo;</strong> in left menu</li>
+<li>Click <strong>&quot;+ Create&quot;</strong> → <strong>&ldquo;Alert rule&rdquo;</strong></li>
+</ol>
+<h4 id="32-configure-condition">3.2 Configure Condition</h4>
+<p><strong>Signal:</strong> Percentage CPU<br>
+<strong>Threshold:</strong> Static<br>
+<strong>Operator:</strong> Greater than<br>
+<strong>Threshold value:</strong> 80<br>
+<strong>Aggregation type:</strong> Average<br>
+<strong>Evaluation period:</strong></p>
+<ul>
+<li>Aggregation granularity: 5 minutes</li>
+<li>Frequency: 5 minutes</li>
+</ul>
+<h4 id="33-configure-actions">3.3 Configure Actions</h4>
+<p><strong>Action group:</strong> Select <code>alert-bridge-solarwinds</code></p>
+<h4 id="34-configure-details">3.4 Configure Details</h4>
+<p><strong>Severity:</strong> Select appropriate severity (Sev0-Sev3)<br>
+<strong>Alert rule name:</strong> <code>High CPU Usage</code><br>
+<strong>Description:</strong> <code>Alert when CPU exceeds 80%</code><br>
+<strong>Resource group:</strong> Your resource group<br>
+<strong>Enable rule:</strong> ✅ Yes</p>
+<p><strong>Click &ldquo;Review + create&rdquo; → &ldquo;Create&rdquo;</strong></p>
+<hr>
+<h2 id="alert-severity-mapping">Alert Severity Mapping</h2>
+<p>Azure Monitor severity maps to SolarWinds priority:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Azure Severity</th>
+          <th>SolarWinds Priority</th>
+          <th>Use Case</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Sev0</td>
+          <td>High</td>
+          <td>Critical outages</td>
+      </tr>
+      <tr>
+          <td>Sev1</td>
+          <td>High</td>
+          <td>Major issues</td>
+      </tr>
+      <tr>
+          <td>Sev2</td>
+          <td>Medium</td>
+          <td>Performance degradation</td>
+      </tr>
+      <tr>
+          <td>Sev3</td>
+          <td>Low</td>
+          <td>Informational</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Configure this mapping during Alert Bridge deployment.</strong></p>
+<hr>
+<h2 id="common-alert-schema">Common Alert Schema</h2>
+<h3 id="why-common-alert-schema-is-required">Why Common Alert Schema is Required</h3>
+<p>Alert Bridge requires <strong>Common Alert Schema</strong> to properly parse alerts.</p>
+<p><strong>✅ Correct (Common Alert Schema):</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;schemaId&#34;</span>: <span style="color:#e6db74">&#34;azureMonitorCommonAlertSchema&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;data&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;essentials&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;alertId&#34;</span>: <span style="color:#e6db74">&#34;...&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;Sev1&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;monitorCondition&#34;</span>: <span style="color:#e6db74">&#34;Fired&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p><strong>❌ Incorrect (Legacy Schema):</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;status&#34;</span>: <span style="color:#e6db74">&#34;Activated&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;context&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;severity&#34;</span>: <span style="color:#e6db74">&#34;High&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h3 id="how-to-enable">How to Enable</h3>
+<p><strong>When creating action group:</strong></p>
+<ul>
+<li>✅ Check <strong>&ldquo;Enable the common alert schema&rdquo;</strong></li>
+</ul>
+<p><strong>For existing action groups:</strong></p>
+<ol>
+<li>Edit action group</li>
+<li>Edit webhook action</li>
+<li>✅ Check <strong>&ldquo;Enable the common alert schema&rdquo;</strong></li>
+<li>Save</li>
+</ol>
+<hr>
+<h2 id="alert-types-supported">Alert Types Supported</h2>
+<p>Alert Bridge supports all Azure Monitor alert types:</p>
+<h3 id="metric-alerts">Metric Alerts</h3>
+<ul>
+<li>Virtual machine metrics (CPU, memory, disk)</li>
+<li>App Service metrics (response time, errors)</li>
+<li>Storage metrics (capacity, transactions)</li>
+<li><strong>ANY</strong> Azure resource metric</li>
+</ul>
+<h3 id="log-alerts">Log Alerts</h3>
+<ul>
+<li>Log Analytics queries</li>
+<li>Application Insights queries</li>
+<li>Custom log searches</li>
+</ul>
+<h3 id="activity-log-alerts">Activity Log Alerts</h3>
+<ul>
+<li>Resource health events</li>
+<li>Service health notifications</li>
+<li>Administrative operations</li>
+</ul>
+<h3 id="resource-health-alerts">Resource Health Alerts</h3>
+<ul>
+<li>Resource availability changes</li>
+<li>Platform-initiated events</li>
+</ul>
+<hr>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-use-descriptive-alert-names">1. Use Descriptive Alert Names</h3>
+<p><strong>Good:</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>&#34;Production Web App - High Response Time&#34;
+&#34;Database Server - Low Memory&#34;
+&#34;Storage Account - High Transactions&#34;</code></pre></div>
+<p><strong>Bad:</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>&#34;Alert 1&#34;
+&#34;Test&#34;
+&#34;CPU&#34;</code></pre></div>
+<p>Alert name becomes the SolarWinds incident title!</p>
+<h3 id="2-set-appropriate-severity">2. Set Appropriate Severity</h3>
+<ul>
+<li><strong>Sev0:</strong> Service down, data loss, security breach</li>
+<li><strong>Sev1:</strong> Major functionality impaired</li>
+<li><strong>Sev2:</strong> Degraded performance, non-critical issues</li>
+<li><strong>Sev3:</strong> Informational, capacity planning</li>
+</ul>
+<h3 id="3-add-helpful-descriptions">3. Add Helpful Descriptions</h3>
+<p>Descriptions appear in SolarWinds incident details:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>&#34;Alert triggers when average CPU exceeds 80% for 5 minutes. 
+Indicates potential capacity issues. Check recent deployments 
+and scale up if needed.&#34;</code></pre></div>
+<h3 id="4-use-dynamic-thresholds-when-applicable">4. Use Dynamic Thresholds (when applicable)</h3>
+<p>For variable workloads, use <strong>dynamic thresholds</strong> instead of static:</p>
+<ul>
+<li>Automatically adapts to patterns</li>
+<li>Reduces false positives</li>
+<li>Better for seasonal/cyclical workloads</li>
+</ul>
+<h3 id="5-configure-alert-suppression">5. Configure Alert Suppression</h3>
+<p>Prevent alert storms:</p>
+<ol>
+<li>Edit alert rule</li>
+<li><strong>Advanced options</strong> → <strong>Alert suppression</strong></li>
+<li>Enable for appropriate duration (e.g., 5 minutes)</li>
+</ol>
+<p>This prevents multiple incidents for rapid-fire alerts.</p>
+<hr>
+<h2 id="testing-your-alerts">Testing Your Alerts</h2>
+<h3 id="method-1-lower-threshold-temporarily">Method 1: Lower Threshold Temporarily</h3>
+<ol>
+<li>Edit alert rule</li>
+<li>Lower threshold to trigger immediately (e.g., CPU &gt; 1%)</li>
+<li>Save</li>
+<li>Wait 1-2 minutes</li>
+<li>Verify incident in SolarWinds</li>
+<li>Restore original threshold</li>
+</ol>
+<h3 id="method-2-use-test-action-group">Method 2: Use Test Action Group</h3>
+<ol>
+<li>Action group → <strong>&ldquo;Test&rdquo;</strong> button</li>
+<li>Select sample alert type</li>
+<li>Click <strong>&ldquo;Test&rdquo;</strong></li>
+<li>Check SolarWinds for test incident</li>
+</ol>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="alert-fires-but-no-incident">Alert Fires But No Incident</h3>
+<p><strong>Check:</strong></p>
+<ol>
+<li>Action group uses <strong>common alert schema</strong> ✅</li>
+<li>Webhook URL is correct</li>
+<li>Logic App run history shows success</li>
+<li><a href="../troubleshooting/alert-not-creating-tickets">Troubleshooting Guide</a></li>
+</ol>
+<h3 id="incident-missing-information">Incident Missing Information</h3>
+<p><strong>Cause:</strong> Legacy alert schema used</p>
+<p><strong>Fix:</strong> Enable common alert schema in action group</p>
+<h3 id="duplicate-incidents">Duplicate Incidents</h3>
+<p><strong>Cause:</strong> Multiple action groups sending same alert</p>
+<p><strong>Fix:</strong> Remove duplicate action groups from alert rule</p>
+<hr>
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+<h3 id="multi-subscription-setup">Multi-Subscription Setup</h3>
+<p><strong>Option A: Deploy Alert Bridge in each subscription</strong></p>
+<ul>
+<li>Isolated per subscription</li>
+<li>Separate billing per deployment</li>
+</ul>
+<p><strong>Option B: Use one Alert Bridge for all subscriptions</strong></p>
+<ol>
+<li>Deploy Alert Bridge in &ldquo;hub&rdquo; subscription</li>
+<li>Get webhook URL</li>
+<li>Create action groups in each subscription pointing to same URL</li>
+<li>All alerts go to same SolarWinds instance</li>
+</ol>
+<h3 id="filtering-by-resource-group">Filtering by Resource Group</h3>
+<p>Alert Bridge processes ALL alerts sent to it. To filter:</p>
+<ol>
+<li>Create separate action groups for different resource groups</li>
+<li>Or use <a href="../guides/severity-filtering">severity filtering</a></li>
+<li>Or configure SolarWinds rules to auto-close certain incidents</li>
+</ol>
+<h3 id="custom-fields">Custom Fields</h3>
+<p>Alert Bridge includes:</p>
+<ul>
+<li>Alert ID (for deduplication)</li>
+<li>Resource information</li>
+<li>Metric values</li>
+<li>Azure portal links</li>
+</ul>
+<p>For additional custom fields, see <a href="../guides/advanced-configuration">Advanced Configuration</a>.</p>
+<hr>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li><strong><a href="../guides/priority-mapping">Configure Priority Mapping</a></strong></li>
+<li><strong><a href="../guides/severity-filtering">Set Up Severity Filtering</a></strong></li>
+<li><strong><a href="./quickstart.md#step-4-test-it">Test Your Integration</a></strong></li>
+</ul>
+<hr>
+<p><strong>Need help?</strong> Contact <a href="mailto:support@cynteocloud.com" rel="external">support@cynteocloud.com</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">Cynteo Alert Bridge Docs</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/quicklinks/index.html"><a class="padding" href="/quicklinks/index.html">Quick Links</a></li>
+            <li class="active " data-nav-url="/gettingstarted/index.html"><a class="padding" href="/gettingstarted/index.html">Getting Started</a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1761838053" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761838053" defer></script>
+    <script src="/js/theme.js?1761838053" defer></script>
+  </body>
+</html>

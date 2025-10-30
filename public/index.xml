@@ -9,10 +9,17 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Quick Links</title>
-      <link>http://localhost:1313/log/index.html</link>
+      <link>http://localhost:1313/quicklinks/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/log/index.html</guid>
+      <guid>http://localhost:1313/quicklinks/index.html</guid>
       <description>🚀 Quick Links Get Started - Deployment guide Features - What Alert Bridge can do Troubleshooting - Common issues Support - Get help</description>
+    </item>
+    <item>
+      <title>2. Getting Started</title>
+      <link>http://localhost:1313/gettingstarted/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/gettingstarted/index.html</guid>
+      <description>Azure Monitor Configuration Configure Azure Monitor alerts to work with Alert Bridge.&#xA;Overview Cynteo Alert Bridge integrates with Azure Monitor using Action Groups and Common Alert Schema. This guide shows you how to configure your alerts properly.&#xA;Prerequisites Azure subscription with Monitor alerts configured Contributor access to create/modify alert rules Alert Bridge deployed (Quick Start) Understanding Alert Flow Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWinds&#xD;Step 1: Create Action Group 1.1 Navigate to Action Groups Open Azure Portal Search for “Monitor” Click “Alerts” in left menu Click “Action groups” Click &#34;+ Create&#34; 1.2 Configure Basics Subscription: Your Azure subscription&#xA;Resource Group: Same as Alert Bridge (recommended)&#xA;Region: Global (default)&#xA;Action group name: alert-bridge-solarwinds&#xA;Display name: SolarWinds (shows in alert emails)</description>
     </item>
   </channel>
 </rss>

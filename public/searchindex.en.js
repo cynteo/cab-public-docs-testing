@@ -1,27 +1,19 @@
 var relearn_searchindex = [
   {
     "breadcrumb": "Cynteo Alert Bridge Docs",
-    "content": "This is a new chapter.",
-    "description": "This is a new chapter.",
+    "content": "🚀 Quick Links Get Started - Deployment guide Features - What Alert Bridge can do Troubleshooting - Common issues Support - Get help",
+    "description": "🚀 Quick Links Get Started - Deployment guide Features - What Alert Bridge can do Troubleshooting - Common issues Support - Get help",
     "tags": [],
-    "title": "Log",
-    "uri": "/log/index.html"
-  },
-  {
-    "breadcrumb": "",
-    "content": "",
-    "description": "",
-    "tags": [],
-    "title": "Cynteo Alert Bridge Docs",
-    "uri": "/index.html"
+    "title": "1. Quick Links",
+    "uri": "/quicklinks/index.html"
   },
   {
     "breadcrumb": "Cynteo Alert Bridge Docs",
-    "content": "",
-    "description": "",
+    "content": "Azure Monitor Configuration Configure Azure Monitor alerts to work with Alert Bridge.\nOverview Cynteo Alert Bridge integrates with Azure Monitor using Action Groups and Common Alert Schema. This guide shows you how to configure your alerts properly.\nPrerequisites Azure subscription with Monitor alerts configured Contributor access to create/modify alert rules Alert Bridge deployed (Quick Start) Understanding Alert Flow Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWinds\rStep 1: Create Action Group 1.1 Navigate to Action Groups Open Azure Portal Search for “Monitor” Click “Alerts” in left menu Click “Action groups” Click \"+ Create\" 1.2 Configure Basics Subscription: Your Azure subscription\nResource Group: Same as Alert Bridge (recommended)\nRegion: Global (default)\nAction group name: alert-bridge-solarwinds\nDisplay name: SolarWinds (shows in alert emails)\n1.3 Add Webhook Action Click “Next: Actions”\nAction type: Webhook\nName: Send to SolarWinds\nURI: Paste your Alert Bridge webhook URL\nTo get webhook URL:\nGo to your Alert Bridge resource group Click the Logic App (name: logicapp-*) Click “Overview” Copy “Callback URL” ✅ CRITICAL: Check “Enable the common alert schema”\nThis ensures alerts are sent in the correct format!\n1.4 Review and Create Click “Review + create” → “Create”\nStep 2: Configure Existing Alerts Add Action Group to Alert Rule For each alert you want sent to SolarWinds:\nMonitor → Alerts → Alert rules Select an alert rule Click “Edit” (or “Manage actions”) Under “Action groups”, click \"+ Add action group\" Select alert-bridge-solarwinds Click “Save” Repeat for all relevant alert rules.\nStep 3: Create New Alert Rule (Example) Example: CPU Alert for VM 3.1 Create Alert Rule Navigate to a Virtual Machine Click “Alerts” in left menu Click \"+ Create\" → “Alert rule” 3.2 Configure Condition Signal: Percentage CPU\nThreshold: Static\nOperator: Greater than\nThreshold value: 80\nAggregation type: Average\nEvaluation period:\nAggregation granularity: 5 minutes Frequency: 5 minutes 3.3 Configure Actions Action group: Select alert-bridge-solarwinds\n3.4 Configure Details Severity: Select appropriate severity (Sev0-Sev3)\nAlert rule name: High CPU Usage\nDescription: Alert when CPU exceeds 80%\nResource group: Your resource group\nEnable rule: ✅ Yes\nClick “Review + create” → “Create”\nAlert Severity Mapping Azure Monitor severity maps to SolarWinds priority:\nAzure Severity SolarWinds Priority Use Case Sev0 High Critical outages Sev1 High Major issues Sev2 Medium Performance degradation Sev3 Low Informational Configure this mapping during Alert Bridge deployment.\nCommon Alert Schema Why Common Alert Schema is Required Alert Bridge requires Common Alert Schema to properly parse alerts.\n✅ Correct (Common Alert Schema):\n{ \"schemaId\": \"azureMonitorCommonAlertSchema\", \"data\": { \"essentials\": { \"alertId\": \"...\", \"severity\": \"Sev1\", \"monitorCondition\": \"Fired\" } } }\r❌ Incorrect (Legacy Schema):\n{ \"status\": \"Activated\", \"context\": { \"severity\": \"High\" } }\rHow to Enable When creating action group:\n✅ Check “Enable the common alert schema” For existing action groups:\nEdit action group Edit webhook action ✅ Check “Enable the common alert schema” Save Alert Types Supported Alert Bridge supports all Azure Monitor alert types:\nMetric Alerts Virtual machine metrics (CPU, memory, disk) App Service metrics (response time, errors) Storage metrics (capacity, transactions) ANY Azure resource metric Log Alerts Log Analytics queries Application Insights queries Custom log searches Activity Log Alerts Resource health events Service health notifications Administrative operations Resource Health Alerts Resource availability changes Platform-initiated events Best Practices 1. Use Descriptive Alert Names Good:\n\"Production Web App - High Response Time\"\r\"Database Server - Low Memory\"\r\"Storage Account - High Transactions\"\rBad:\n\"Alert 1\"\r\"Test\"\r\"CPU\"\rAlert name becomes the SolarWinds incident title!\n2. Set Appropriate Severity Sev0: Service down, data loss, security breach Sev1: Major functionality impaired Sev2: Degraded performance, non-critical issues Sev3: Informational, capacity planning 3. Add Helpful Descriptions Descriptions appear in SolarWinds incident details:\n\"Alert triggers when average CPU exceeds 80% for 5 minutes. Indicates potential capacity issues. Check recent deployments and scale up if needed.\"\r4. Use Dynamic Thresholds (when applicable) For variable workloads, use dynamic thresholds instead of static:\nAutomatically adapts to patterns Reduces false positives Better for seasonal/cyclical workloads 5. Configure Alert Suppression Prevent alert storms:\nEdit alert rule Advanced options → Alert suppression Enable for appropriate duration (e.g., 5 minutes) This prevents multiple incidents for rapid-fire alerts.\nTesting Your Alerts Method 1: Lower Threshold Temporarily Edit alert rule Lower threshold to trigger immediately (e.g., CPU \u003e 1%) Save Wait 1-2 minutes Verify incident in SolarWinds Restore original threshold Method 2: Use Test Action Group Action group → “Test” button Select sample alert type Click “Test” Check SolarWinds for test incident Troubleshooting Alert Fires But No Incident Check:\nAction group uses common alert schema ✅ Webhook URL is correct Logic App run history shows success Troubleshooting Guide Incident Missing Information Cause: Legacy alert schema used\nFix: Enable common alert schema in action group\nDuplicate Incidents Cause: Multiple action groups sending same alert\nFix: Remove duplicate action groups from alert rule\nAdvanced Configuration Multi-Subscription Setup Option A: Deploy Alert Bridge in each subscription\nIsolated per subscription Separate billing per deployment Option B: Use one Alert Bridge for all subscriptions\nDeploy Alert Bridge in “hub” subscription Get webhook URL Create action groups in each subscription pointing to same URL All alerts go to same SolarWinds instance Filtering by Resource Group Alert Bridge processes ALL alerts sent to it. To filter:\nCreate separate action groups for different resource groups Or use severity filtering Or configure SolarWinds rules to auto-close certain incidents Custom Fields Alert Bridge includes:\nAlert ID (for deduplication) Resource information Metric values Azure portal links For additional custom fields, see Advanced Configuration.\nNext Steps Configure Priority Mapping Set Up Severity Filtering Test Your Integration Need help? Contact support@cynteocloud.com",
+    "description": "Azure Monitor Configuration Configure Azure Monitor alerts to work with Alert Bridge.\nOverview Cynteo Alert Bridge integrates with Azure Monitor using Action Groups and Common Alert Schema. This guide shows you how to configure your alerts properly.\nPrerequisites Azure subscription with Monitor alerts configured Contributor access to create/modify alert rules Alert Bridge deployed (Quick Start) Understanding Alert Flow Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWinds\rStep 1: Create Action Group 1.1 Navigate to Action Groups Open Azure Portal Search for “Monitor” Click “Alerts” in left menu Click “Action groups” Click \"+ Create\" 1.2 Configure Basics Subscription: Your Azure subscription\nResource Group: Same as Alert Bridge (recommended)\nRegion: Global (default)\nAction group name: alert-bridge-solarwinds\nDisplay name: SolarWinds (shows in alert emails)",
     "tags": [],
-    "title": "Posts",
-    "uri": "/posts/index.html"
+    "title": "2. Getting Started",
+    "uri": "/gettingstarted/index.html"
   },
   {
     "breadcrumb": "Cynteo Alert Bridge Docs",
@@ -30,6 +22,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Categories",
     "uri": "/categories/index.html"
+  },
+  {
+    "breadcrumb": "",
+    "content": "",
+    "description": "",
+    "tags": [],
+    "title": "Cynteo Alert Bridge Docs",
+    "uri": "/index.html"
   },
   {
     "breadcrumb": "Cynteo Alert Bridge Docs",

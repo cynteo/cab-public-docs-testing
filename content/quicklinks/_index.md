@@ -1,5 +1,5 @@
 +++
-title = "1. Quick Links"
+title = "Quick Links"
 type = "default"
 weight = 1
 +++
