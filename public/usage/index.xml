@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Usages | Cynteo Alert Bridge Docs</title>
+    <link>http://localhost:1313/usage/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/usage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configure Alert Action Group</title>
+      <link>http://localhost:1313/usage/actiongroup/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/usage/actiongroup/index.html</guid>
+      <description>Complete guide to setting up Azure Monitor action groups for Alert Bridge.&#xA;What is an Action Group? An Action Group is a collection of notification and action settings that can be reused across multiple alert rules. It defines what happens when an alert fires.&#xA;For Alert Bridge, the action group sends alert data to your SolarWinds integration via webhook.&#xA;Prerequisites Azure subscription Alert Bridge deployed and running Contributor access to create action groups Step-by-Step Guide Step 1: Get Webhook URL Go to Azure Portal → Resource Groups Find your Alert Bridge resource group (e.g., rg-alert-bridge) Click the Logic App resource (name: logicapp-*) Click “Overview” tab Find “Workflow URL” or “Callback URL” Click “Copy URL” button The URL looks like:</description>
+    </item>
+  </channel>
+</rss>

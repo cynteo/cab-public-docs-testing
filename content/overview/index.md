@@ -1,7 +1,7 @@
 +++
-title = "Getting Started"
+title = "Overview"
 type = "default"
-weight = 2
+weight = 1
 +++
 
 # Azure Monitor Configuration

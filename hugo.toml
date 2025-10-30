@@ -22,3 +22,47 @@ themeVariant = [
 disableLandingPageButton = false
 landingPageName = '<i class="fa-fw fas fa-home"></i> Home'
 titleSeparator = '|'
+sidebarmenus = [
+  { type = 'menu', identifier = 'defined', main = true, disableTitle = true },
+  # { type = 'page', identifier = 'home', main = true, disableTitle = true, pageRef = '' },
+  # { type = 'menu', identifier = 'shortcuts', main = false, disableTitle = false },
+]
+disableInlineCopyToClipBoard = true
+disableAnchorScrolling = false
+alwaysopen = true
+collapsibleMenu = false
+disableRootBreadcrumb = false
+# clarityId = 'prb1m4vask' # AVM-Test
+clarityId = 'p0l7yeco82' # Azure-Verified-Modules
+custom_js = ['js/tags.js']
+
+[markup]
+defaultMarkdownHandler = 'goldmark'
+[markup.tableOfContents]
+endLevel = 6
+ordered = false
+startLevel = 2
+
+[markup.goldmark.renderer]
+unsafe = true
+hardWraps = true
+
+[markup.goldmark.parser]
+autoHeadingID = true
+
+[[menu.defined]]
+identifier = 'overview'
+parent = 'home'
+name = 'Overview'
+pageRef = '/overview'
+weight = 1
+params = { alwaysopen = true, collapsibleMenu = true }
+
+
+[[menu.defined]]
+identifier = 'usage'
+parent = 'home'
+name = 'Usage Guide'
+pageRef = '/usage'
+weight = 3
+params = { alwaysopen = true, collapsibleMenu = true }
