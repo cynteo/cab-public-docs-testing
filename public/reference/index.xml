@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference Docs | Cynteo Alert Bridge Docs</title>
+    <link>http://localhost:1313/reference/index.html</link>
+    <description>Usage Guidance for the Cynteo Alert Brige</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/reference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Incident Fields Reference</title>
+      <link>http://localhost:1313/reference/incidentfields/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reference/incidentfields/index.html</guid>
+      <description>Complete reference of what data Alert Bridge sends to SolarWinds Service Desk incidents</description>
+    </item>
+    <item>
+      <title>Security Overview</title>
+      <link>http://localhost:1313/reference/security/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reference/security/index.html</guid>
+      <description>Security architecture and compliance information for Cynteo Alert Bridge</description>
+    </item>
+    <item>
+      <title>Alert Schema Reference</title>
+      <link>http://localhost:1313/reference/alertschema/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reference/alertschema/index.html</guid>
+      <description>Azure Monitor Common Alert Schema explained</description>
+    </item>
+    <item>
+      <title>Configuration Options</title>
+      <link>http://localhost:1313/reference/environmentvariables/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reference/environmentvariables/index.html</guid>
+      <description>Available configuration options for Cynteo Alert Bridge</description>
+    </item>
+    <item>
+      <title>API</title>
+      <link>http://localhost:1313/reference/api/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reference/api/index.html</guid>
+      <description>API reference for Cynteo Alert Bridge webhooks and integrations</description>
+    </item>
+    <item>
+      <title>Changelog</title>
+      <link>http://localhost:1313/reference/changelog/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reference/changelog/index.html</guid>
+      <description>Version history and release notes for Cynteo Alert Bridge</description>
+    </item>
+    <item>
+      <title>Roadmap</title>
+      <link>http://localhost:1313/reference/roadmap/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reference/roadmap/index.html</guid>
+      <description>Planned features and enhancements for Cynteo Alert Bridge</description>
+    </item>
+  </channel>
+</rss>

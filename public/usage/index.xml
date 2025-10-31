@@ -3,7 +3,7 @@
   <channel>
     <title>Usage Guide | Cynteo Alert Bridge Docs</title>
     <link>http://localhost:1313/usage/index.html</link>
-    <description>Usage Guidance for the Cynteo Alert Brige</description>
+    <description></description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/usage/index.xml" rel="self" type="application/rss+xml" />
@@ -27,6 +27,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/usage/severityfiltering/severityfiltering/index.html</guid>
       <description>Filter which alert severities create SolarWinds incidents</description>
+    </item>
+    <item>
+      <title>ITSM Setup</title>
+      <link>http://localhost:1313/usage/itsm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/usage/itsm/index.html</guid>
+      <description>Usage Guidance for the Cynteo Alert Brige</description>
     </item>
   </channel>
 </rss>

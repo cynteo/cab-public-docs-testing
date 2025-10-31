@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Relearn 8.1.1+98ff131315b1d0ec86cbae2fef7a4cda5c37f526">
+    <meta name="description" content="Quick solutions to the most common Alert Bridge problems">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:1313/images/cto_logo.png">
+    <meta name="twitter:title" content="Common Issues and Solutions | Cynteo Alert Bridge Docs">
+    <meta name="twitter:description" content="Quick solutions to the most common Alert Bridge problems">
+    <meta property="og:url" content="http://localhost:1313/troubleshooting/common-issues/index.html">
+    <meta property="og:site_name" content="Cynteo Alert Bridge Docs">
+    <meta property="og:title" content="Common Issues and Solutions | Cynteo Alert Bridge Docs">
+    <meta property="og:description" content="Quick solutions to the most common Alert Bridge problems">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Troubleshooting">
+    <meta property="og:image" content="http://localhost:1313/images/cto_logo.png">
+    <meta itemprop="name" content="Common Issues and Solutions | Cynteo Alert Bridge Docs">
+    <meta itemprop="description" content="Quick solutions to the most common Alert Bridge problems">
+    <meta itemprop="wordCount" content="1038">
+    <meta itemprop="image" content="http://localhost:1313/images/cto_logo.png">
+    <title>Common Issues and Solutions | Cynteo Alert Bridge Docs</title>
+    <link href="/images/favicon.png?1761924435" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1761924435" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761924435" defer></script>
+    <script src="/js/search-lunr.js?1761924435" defer></script>
+    <script src="/js/search.js?1761924435" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1761924435";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1761924435" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761924435" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761924435" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761924435" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761924435" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761924435" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761924435" rel="stylesheet">
+    <link href="/css/theme.css?1761924435" rel="stylesheet">
+    <link href="/css/format-html.css?1761924435" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/troubleshooting\/common-issues\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=true;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/troubleshooting/common-issues/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#alerts-not-creating-incidents">Alerts Not Creating Incidents</a>
+      <ul>
+        <li><a href="#symptom">Symptom</a></li>
+        <li><a href="#diagnosis-steps">Diagnosis Steps</a></li>
+        <li><a href="#common-causes-and-fixes">Common Causes and Fixes</a></li>
+      </ul>
+    </li>
+    <li><a href="#duplicate-incidents-created">Duplicate Incidents Created</a>
+      <ul>
+        <li><a href="#symptom-1">Symptom</a></li>
+        <li><a href="#causes">Causes</a></li>
+      </ul>
+    </li>
+    <li><a href="#incidents-not-resolving">Incidents Not Resolving</a>
+      <ul>
+        <li><a href="#symptom-2">Symptom</a></li>
+        <li><a href="#diagnosis">Diagnosis</a></li>
+      </ul>
+    </li>
+    <li><a href="#incident-missing-information">Incident Missing Information</a>
+      <ul>
+        <li><a href="#symptom-3">Symptom</a></li>
+        <li><a href="#cause">Cause</a></li>
+        <li><a href="#fix">Fix</a></li>
+      </ul>
+    </li>
+    <li><a href="#high-latency-slow-incident-creation">High Latency (Slow Incident Creation)</a>
+      <ul>
+        <li><a href="#symptom-4">Symptom</a></li>
+        <li><a href="#normal-latency">Normal Latency</a></li>
+        <li><a href="#if-longer-than-10-minutes">If Longer Than 10 Minutes</a></li>
+      </ul>
+    </li>
+    <li><a href="#incidents-have-wrong-priority">Incidents Have Wrong Priority</a>
+      <ul>
+        <li><a href="#symptom-5">Symptom</a></li>
+        <li><a href="#cause-1">Cause</a></li>
+        <li><a href="#check-current-mapping">Check Current Mapping</a></li>
+        <li><a href="#fix-1">Fix</a></li>
+      </ul>
+    </li>
+    <li><a href="#deployment-errors">Deployment Errors</a>
+      <ul>
+        <li><a href="#resource-names-must-be-unique">&ldquo;Resource names must be unique&rdquo;</a></li>
+        <li><a href="#insufficient-permissions">&ldquo;Insufficient permissions&rdquo;</a></li>
+        <li><a href="#managed-application-already-exists">&ldquo;Managed application already exists&rdquo;</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage-and-billing-issues">Usage and Billing Issues</a>
+      <ul>
+        <li><a href="#exceeded-alert-limit">&ldquo;Exceeded alert limit&rdquo;</a></li>
+        <li><a href="#what-happens">What Happens</a></li>
+        <li><a href="#fix-2">Fix</a></li>
+      </ul>
+    </li>
+    <li><a href="#api-token-rotation">API Token Rotation</a>
+      <ul>
+        <li><a href="#need-to-update-token">Need to Update Token</a></li>
+      </ul>
+    </li>
+    <li><a href="#logic-app-disabled-or-stopped">Logic App Disabled or Stopped</a>
+      <ul>
+        <li><a href="#symptom-6">Symptom</a></li>
+        <li><a href="#check-logic-app-status">Check Logic App Status</a></li>
+        <li><a href="#if-disabled">If Disabled</a></li>
+      </ul>
+    </li>
+    <li><a href="#cannot-find-webhook-url">Cannot Find Webhook URL</a>
+      <ul>
+        <li><a href="#need-webhook-url-to-create-action-group">Need webhook URL to create action group</a></li>
+      </ul>
+    </li>
+    <li><a href="#solarwinds-tickets-have-wrong-category">SolarWinds Tickets Have Wrong Category</a>
+      <ul>
+        <li><a href="#symptom-7">Symptom</a></li>
+        <li><a href="#cause-2">Cause</a></li>
+        <li><a href="#check-current-category">Check Current Category</a></li>
+        <li><a href="#fix-3">Fix</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#before-contacting-support">Before Contacting Support</a></li>
+        <li><a href="#contact-support">Contact Support</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Cynteo Alert Bridge</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/troubleshooting/index.html"><span itemprop="name">Troubleshooting</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Common Issues and Solutions</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><a href="/troubleshooting/index.html" title="Troubleshooting (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><a href="/troubleshooting/deployment-errors/index.html" title="Deployment Errors (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable troubleshooting" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="common-issues-and-solutions">Common Issues and Solutions</h1>
+
+<h1 id="common-issues-and-solutions">Common Issues and Solutions</h1>
+<p>Quick solutions to the most common Alert Bridge problems.</p>
+<hr>
+<h2 id="alerts-not-creating-incidents">Alerts Not Creating Incidents</h2>
+<h3 id="symptom">Symptom</h3>
+<p>Alert fires in Azure Monitor, but no incident appears in SolarWinds.</p>
+<h3 id="diagnosis-steps">Diagnosis Steps</h3>
+<p><strong>1. Check Action Group Configuration</strong></p>
+<ul>
+<li>Go to <strong>Monitor</strong> → <strong>Alerts</strong> → <strong>Action groups</strong></li>
+<li>Click your action group</li>
+<li>Verify webhook action exists</li>
+<li>✅ Confirm &ldquo;Enable common alert schema&rdquo; is checked</li>
+</ul>
+<p><strong>2. Check Logic App Run History</strong></p>
+<ul>
+<li>Go to Alert Bridge resource group</li>
+<li>Click Logic App resource</li>
+<li>Click &ldquo;Overview&rdquo; → &ldquo;Runs history&rdquo;</li>
+<li>Look for recent runs</li>
+</ul>
+<p><strong>If no runs:</strong> Action group not triggering<br>
+<strong>If runs exist:</strong> Click run to see details</p>
+<p><strong>3. Check Logic App Run Details</strong></p>
+<p><strong>Success (green checkmark):</strong></p>
+<ul>
+<li>Incident should be in SolarWinds</li>
+<li>Check SolarWinds with search for alert name</li>
+</ul>
+<p><strong>Failed (red X):</strong></p>
+<ul>
+<li>Click failed step</li>
+<li>Read error message</li>
+<li>See specific error solutions below</li>
+</ul>
+<h3 id="common-causes-and-fixes">Common Causes and Fixes</h3>
+<h4 id="cause-1-common-alert-schema-not-enabled">Cause 1: Common Alert Schema Not Enabled</h4>
+<p><strong>Error:</strong> <code>Cannot read property 'essentials' of undefined</code></p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Edit action group</li>
+<li>Edit webhook action</li>
+<li>✅ Check &ldquo;Enable the common alert schema&rdquo;</li>
+<li>Save</li>
+</ol>
+<h4 id="cause-2-invalid-solarwinds-api-token">Cause 2: Invalid SolarWinds API Token</h4>
+<p><strong>Error:</strong> <code>401 Unauthorized</code> or <code>403 Forbidden</code></p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Generate new API token in SolarWinds</li>
+<li>Go to Key Vault resource in Alert Bridge resource group</li>
+<li>Click &ldquo;Secrets&rdquo;</li>
+<li>Find secret (name: <code>solarwinds-*</code>)</li>
+<li>Click &ldquo;New version&rdquo;</li>
+<li>Paste new token</li>
+<li>Save</li>
+</ol>
+<h4 id="cause-3-solarwinds-category-doesnt-exist">Cause 3: SolarWinds Category Doesn&rsquo;t Exist</h4>
+<p><strong>Error:</strong> <code>Category not found</code></p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li>Option A: Create category in SolarWinds</li>
+<li>Option B: Update Logic App to use existing category (contact support)</li>
+</ul>
+<h4 id="cause-4-requester-email-invalid">Cause 4: Requester Email Invalid</h4>
+<p><strong>Error:</strong> <code>Requester not found</code></p>
+<p><strong>Fix:</strong></p>
+<ul>
+<li>Create user in SolarWinds with that email, OR</li>
+<li>Update Logic App to use existing email (contact support)</li>
+</ul>
+<hr>
+<h2 id="duplicate-incidents-created">Duplicate Incidents Created</h2>
+<h3 id="symptom-1">Symptom</h3>
+<p>Multiple incidents created for the same alert.</p>
+<h3 id="causes">Causes</h3>
+<p><strong>1. Alert ID Changed</strong></p>
+<ul>
+<li>Azure generates new alert ID</li>
+<li>Alert Bridge can&rsquo;t deduplicate</li>
+</ul>
+<p><strong>Fix:</strong> Not much you can do - this is Azure Monitor behavior</p>
+<p><strong>2. Multiple Action Groups</strong></p>
+<ul>
+<li>Same alert has multiple action groups pointing to Alert Bridge</li>
+</ul>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Check alert rule → Actions</li>
+<li>Remove duplicate action groups</li>
+</ol>
+<p><strong>3. Storage Table Issue</strong></p>
+<ul>
+<li>Alert tracking table corrupted</li>
+</ul>
+<p><strong>Fix:</strong> Contact support to clear tracking table</p>
+<hr>
+<h2 id="incidents-not-resolving">Incidents Not Resolving</h2>
+<h3 id="symptom-2">Symptom</h3>
+<p>Alert resolves in Azure but incident stays open in SolarWinds.</p>
+<h3 id="diagnosis">Diagnosis</h3>
+<p><strong>1. Check Alert Resolved Notification</strong></p>
+<ul>
+<li>Alerts must send &ldquo;Resolved&rdquo; notification</li>
+<li>Some alert rules don&rsquo;t send resolution notifications</li>
+</ul>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Edit alert rule</li>
+<li><strong>Advanced options</strong></li>
+<li>✅ Check &ldquo;Automatically resolve alerts&rdquo;</li>
+<li>Save</li>
+</ol>
+<p><strong>2. Check Logic App Resolution Logic</strong></p>
+<ul>
+<li>Go to Logic App run history</li>
+<li>Find run when alert resolved</li>
+<li>Check if <code>monitorCondition = &quot;Resolved&quot;</code></li>
+</ul>
+<p><strong>If not &ldquo;Resolved&rdquo;:</strong> Azure not sending resolution notification</p>
+<hr>
+<h2 id="incident-missing-information">Incident Missing Information</h2>
+<h3 id="symptom-3">Symptom</h3>
+<p>Incident created but description is empty or incomplete.</p>
+<h3 id="cause">Cause</h3>
+<p>Legacy alert schema used instead of common alert schema.</p>
+<h3 id="fix">Fix</h3>
+<ol>
+<li>Edit action group</li>
+<li>Edit webhook action</li>
+<li>✅ Ensure &ldquo;Enable common alert schema&rdquo; is checked</li>
+<li>Save</li>
+<li>Test with new alert</li>
+</ol>
+<hr>
+<h2 id="high-latency-slow-incident-creation">High Latency (Slow Incident Creation)</h2>
+<h3 id="symptom-4">Symptom</h3>
+<p>Alerts take &gt; 5 minutes to create incidents.</p>
+<h3 id="normal-latency">Normal Latency</h3>
+<ul>
+<li><strong>Azure Monitor detection:</strong> 1-5 minutes</li>
+<li><strong>Action group trigger:</strong> &lt; 30 seconds</li>
+<li><strong>Alert Bridge processing:</strong> &lt; 10 seconds</li>
+<li><strong>SolarWinds API:</strong> &lt; 5 seconds</li>
+<li><strong>Total:</strong> Usually 2-6 minutes</li>
+</ul>
+<h3 id="if-longer-than-10-minutes">If Longer Than 10 Minutes</h3>
+<p><strong>1. Check Logic App Performance</strong></p>
+<ul>
+<li>Go to Logic App → Overview</li>
+<li>Check &ldquo;Failed runs&rdquo;</li>
+<li>Check &ldquo;Throttled runs&rdquo;</li>
+</ul>
+<p><strong>2. Check SolarWinds API Performance</strong></p>
+<ul>
+<li>If SolarWinds is slow, incidents will be delayed</li>
+<li>Contact SolarWinds support</li>
+</ul>
+<p><strong>3. Check Azure Region Issues</strong></p>
+<ul>
+<li>Azure Service Health may show incidents</li>
+<li>Check <a href="https://status.azure.com" rel="external">Azure Status</a></li>
+</ul>
+<hr>
+<h2 id="incidents-have-wrong-priority">Incidents Have Wrong Priority</h2>
+<h3 id="symptom-5">Symptom</h3>
+<p>Incident priority doesn&rsquo;t match alert severity.</p>
+<h3 id="cause-1">Cause</h3>
+<p>Priority mapping configured incorrectly during deployment.</p>
+<h3 id="check-current-mapping">Check Current Mapping</h3>
+<ol>
+<li>Go to Alert Bridge Function App</li>
+<li><strong>Settings</strong> → <strong>Configuration</strong></li>
+<li>Check environment variables:
+<ul>
+<li><code>PRIORITY_SEV0</code></li>
+<li><code>PRIORITY_SEV1</code></li>
+<li><code>PRIORITY_SEV2</code></li>
+<li><code>PRIORITY_SEV3</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="fix-1">Fix</h3>
+<p>See <a href="../guides/priority-mapping">Priority Mapping Guide</a></p>
+<hr>
+<h2 id="deployment-errors">Deployment Errors</h2>
+<h3 id="resource-names-must-be-unique">&ldquo;Resource names must be unique&rdquo;</h3>
+<p><strong>Cause:</strong> Resource name conflict with existing resources.</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Delete the resource group if it exists</li>
+<li>Deploy again (Alert Bridge generates new unique names)</li>
+</ol>
+<h3 id="insufficient-permissions">&ldquo;Insufficient permissions&rdquo;</h3>
+<p><strong>Cause:</strong> You don&rsquo;t have Owner/Contributor role on subscription.</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Ask subscription owner to grant you Contributor role</li>
+<li>OR ask them to deploy for you</li>
+</ol>
+<h3 id="managed-application-already-exists">&ldquo;Managed application already exists&rdquo;</h3>
+<p><strong>Cause:</strong> Previous deployment wasn&rsquo;t fully cleaned up.</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Go to <strong>Managed applications</strong></li>
+<li>Find old deployment</li>
+<li>Delete it</li>
+<li>Wait 5 minutes</li>
+<li>Deploy again</li>
+</ol>
+<hr>
+<h2 id="usage-and-billing-issues">Usage and Billing Issues</h2>
+<h3 id="exceeded-alert-limit">&ldquo;Exceeded alert limit&rdquo;</h3>
+<p><strong>Symptom:</strong> Email notification that you&rsquo;ve reached plan limit.</p>
+<h3 id="what-happens">What Happens</h3>
+<ul>
+<li><strong>Soft limit:</strong> No service interruption</li>
+<li>Alerts continue to create incidents</li>
+<li>Overage charges may apply (if configured)</li>
+</ul>
+<h3 id="fix-2">Fix</h3>
+<ul>
+<li>Upgrade plan if consistently over limit</li>
+<li>Or implement <a href="../guides/severity-filtering">severity filtering</a></li>
+</ul>
+<hr>
+<h2 id="api-token-rotation">API Token Rotation</h2>
+<h3 id="need-to-update-token">Need to Update Token</h3>
+<p><strong>When to rotate:</strong></p>
+<ul>
+<li>Every 90 days (security best practice)</li>
+<li>If token compromised</li>
+<li>If permissions change</li>
+</ul>
+<p><strong>How to update:</strong></p>
+<ol>
+<li>
+<p><strong>Generate new token in SolarWinds</strong></p>
+<ul>
+<li>See <a href="../getting-started/solarwinds-setup">SolarWinds Setup</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Update in Key Vault</strong></p>
+<ul>
+<li>Go to Key Vault in Alert Bridge resource group</li>
+<li><strong>Secrets</strong> → Find your secret</li>
+<li><strong>New version</strong> → Paste new token</li>
+<li>Save</li>
+</ul>
+</li>
+<li>
+<p><strong>Test</strong></p>
+<ul>
+<li>Trigger test alert</li>
+<li>Verify incident created</li>
+</ul>
+</li>
+</ol>
+<p><strong>No restart needed</strong> - Logic App uses Key Vault reference and picks up new version automatically!</p>
+<hr>
+<h2 id="logic-app-disabled-or-stopped">Logic App Disabled or Stopped</h2>
+<h3 id="symptom-6">Symptom</h3>
+<p>Alerts stop creating incidents suddenly.</p>
+<h3 id="check-logic-app-status">Check Logic App Status</h3>
+<ol>
+<li>Go to Logic App resource</li>
+<li>Check <strong>Status</strong> at top</li>
+<li>Should be &ldquo;Enabled&rdquo;</li>
+</ol>
+<h3 id="if-disabled">If Disabled</h3>
+<p><strong>Re-enable:</strong></p>
+<ol>
+<li>Click <strong>&ldquo;Enable&rdquo;</strong> button</li>
+<li>Wait ~30 seconds</li>
+<li>Test with alert</li>
+</ol>
+<p><strong>Why it happened:</strong></p>
+<ul>
+<li>Manual disable</li>
+<li>Too many failures (Azure auto-disables)</li>
+<li>Billing issue</li>
+</ul>
+<hr>
+<h2 id="cannot-find-webhook-url">Cannot Find Webhook URL</h2>
+<h3 id="need-webhook-url-to-create-action-group">Need webhook URL to create action group</h3>
+<p><strong>How to find it:</strong></p>
+<ol>
+<li>Azure Portal → Your resource group</li>
+<li>Click <strong>Logic App</strong> resource (name: <code>logicapp-*</code>)</li>
+<li>Click <strong>&ldquo;Overview&rdquo;</strong> tab</li>
+<li>Look for <strong>&ldquo;Workflow URL&rdquo;</strong> or <strong>&ldquo;Callback URL&rdquo;</strong></li>
+<li>Click copy button</li>
+</ol>
+<p><strong>If URL not visible:</strong></p>
+<ul>
+<li>You may not have permission (need Reader role)</li>
+<li>Ask deployment owner to share URL</li>
+</ul>
+<hr>
+<h2 id="solarwinds-tickets-have-wrong-category">SolarWinds Tickets Have Wrong Category</h2>
+<h3 id="symptom-7">Symptom</h3>
+<p>Incidents created in wrong category.</p>
+<h3 id="cause-2">Cause</h3>
+<p>Category configured during deployment.</p>
+<h3 id="check-current-category">Check Current Category</h3>
+<ol>
+<li>Go to Function App</li>
+<li><strong>Settings</strong> → <strong>Configuration</strong></li>
+<li>Check <code>INCIDENT_CATEGORY</code> value</li>
+</ol>
+<h3 id="fix-3">Fix</h3>
+<p>Contact support to update category (requires redeployment or manual config)</p>
+<hr>
+<h2 id="getting-help">Getting Help</h2>
+<h3 id="before-contacting-support">Before Contacting Support</h3>
+<p>Please gather:</p>
+<ol>
+<li>
+<p><strong>Logic App run history</strong></p>
+<ul>
+<li>Screenshot of failed run</li>
+<li>Error message</li>
+</ul>
+</li>
+<li>
+<p><strong>Alert details</strong></p>
+<ul>
+<li>Alert rule name</li>
+<li>Severity</li>
+<li>Time it fired</li>
+</ul>
+</li>
+<li>
+<p><strong>Action group config</strong></p>
+<ul>
+<li>Screenshot showing &ldquo;Enable common alert schema&rdquo; status</li>
+</ul>
+</li>
+<li>
+<p><strong>What you&rsquo;ve tried</strong></p>
+<ul>
+<li>List of troubleshooting steps</li>
+</ul>
+</li>
+</ol>
+<h3 id="contact-support">Contact Support</h3>
+<p><strong>Email:</strong> <a href="mailto:support@cynteocloud.com" rel="external">support@cynteocloud.com</a></p>
+<p><strong>Include:</strong></p>
+<ul>
+<li>Problem description</li>
+<li>Screenshots</li>
+<li>Steps to reproduce</li>
+<li>Azure subscription ID (if sharing access)</li>
+</ul>
+<p><strong>Response time:</strong></p>
+<ul>
+<li>Standard: &lt; 24 hours</li>
+<li>Enterprise: &lt; 4 hours</li>
+</ul>
+<hr>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="/troubleshooting/deployment-errors/index.html">Deployment Errors</a></li>
+<li><a href="/troubleshooting/alert-not-creating-tickets/index.html">Alert Not Creating Tickets</a></li>
+<li><a href="../getting-started/quickstart">Quick Start Guide</a></li>
+<li><a href="../guides/">Configuration Guides</a></li>
+</ul>
+<hr>
+<p><strong>Still stuck?</strong> Email <a href="mailto:support@cynteocloud.com" rel="external">support@cynteocloud.com</a> with details.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<img src="/images/cto_logo.png" width="50" height="50" style="vertical-align:bottom">
+<a id="R-logo" class="R-default" href="/index.html">          Cynteo Alert Bridge Docs</a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-defined">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/overview/index.html"><a class="padding" href="/overview/index.html">Overview</a></li>
+            <li class="" data-nav-url="/quicklinks/index.html"><a class="padding" href="/quicklinks/index.html">Quick Links</a></li>
+            <li class="alwaysopen " data-nav-url="/usage/index.html"><input type="checkbox" id="R-section-9366282e11c151558bdfaab4a264aa1b" aria-controls="R-subsections-9366282e11c151558bdfaab4a264aa1b" checked><label for="R-section-9366282e11c151558bdfaab4a264aa1b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Usage Guide</span></label><a class="padding" href="/usage/index.html">Usage Guide</a><ul id="R-subsections-9366282e11c151558bdfaab4a264aa1b" class="collapsible-menu">
+            <li class="" data-nav-url="/usage/actiongroup/actiongroup/index.html"><a class="padding" href="/usage/actiongroup/actiongroup/index.html">Action Group Setup</a></li>
+            <li class="" data-nav-url="/usage/prioritymapping/prioritymapping/index.html"><a class="padding" href="/usage/prioritymapping/prioritymapping/index.html">Priority Mapping Setup</a></li>
+            <li class="" data-nav-url="/usage/severityfiltering/severityfiltering/index.html"><a class="padding" href="/usage/severityfiltering/severityfiltering/index.html">Severity Filtering Setup</a></li>
+            <li class="alwaysopen " data-nav-url="/usage/itsm/index.html"><input type="checkbox" id="R-section-ac4e6ec202e4740b32129ca1367afd01" aria-controls="R-subsections-ac4e6ec202e4740b32129ca1367afd01" checked><label for="R-section-ac4e6ec202e4740b32129ca1367afd01"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ITSM Setup</span></label><a class="padding" href="/usage/itsm/index.html">ITSM Setup</a><ul id="R-subsections-ac4e6ec202e4740b32129ca1367afd01" class="collapsible-menu">
+            <li class="" data-nav-url="/usage/itsm/solarwinds/index.html"><a class="padding" href="/usage/itsm/solarwinds/index.html">Solarwinds</a></li></ul></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/reference/index.html"><input type="checkbox" id="R-section-b8af13ea9c8fe890c9979a1fa8dbde22" aria-controls="R-subsections-b8af13ea9c8fe890c9979a1fa8dbde22" checked><label for="R-section-b8af13ea9c8fe890c9979a1fa8dbde22"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Reference</span></label><a class="padding" href="/reference/index.html">Reference</a><ul id="R-subsections-b8af13ea9c8fe890c9979a1fa8dbde22" class="collapsible-menu">
+            <li class="" data-nav-url="/reference/alertschema/index.html"><a class="padding" href="/reference/alertschema/index.html">Alert Schema</a></li>
+            <li class="" data-nav-url="/reference/api/index.html"><a class="padding" href="/reference/api/index.html">API</a></li>
+            <li class="" data-nav-url="/reference/environmentvariables/index.html"><a class="padding" href="/reference/environmentvariables/index.html">Environment Variables</a></li>
+            <li class="" data-nav-url="/reference/incidentfields/index.html"><a class="padding" href="/reference/incidentfields/index.html">Incident Fields</a></li>
+            <li class="" data-nav-url="/reference/roadmap/index.html"><a class="padding" href="/reference/roadmap/index.html">Roadmap</a></li>
+            <li class="" data-nav-url="/reference/security/index.html"><a class="padding" href="/reference/security/index.html">Security</a></li></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/troubleshooting/index.html"><input type="checkbox" id="R-section-e09245effc62059e51f926fad603e413" aria-controls="R-subsections-e09245effc62059e51f926fad603e413" checked><label for="R-section-e09245effc62059e51f926fad603e413"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Troubleshooting</span></label><a class="padding" href="/troubleshooting/index.html">Troubleshooting</a><ul id="R-subsections-e09245effc62059e51f926fad603e413" class="collapsible-menu">
+            <li class="active " data-nav-url="/troubleshooting/common-issues/index.html"><a class="padding" href="/troubleshooting/common-issues/index.html">Common issues</a></li>
+            <li class="" data-nav-url="/troubleshooting/deployment-errors/index.html"><a class="padding" href="/troubleshooting/deployment-errors/index.html">Deployment errors</a></li>
+            <li class="" data-nav-url="/troubleshooting/alert-not-creating-tickets/index.html"><a class="padding" href="/troubleshooting/alert-not-creating-tickets/index.html">Alert not creating tickets</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Zen Light/Dark</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1761924435" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761924435" defer></script>
+    <script src="/js/theme.js?1761924435" defer></script>
+  </body>
+</html>

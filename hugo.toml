@@ -81,3 +81,107 @@ name = 'Severity Filtering Setup'
 pageRef = '/usage/severityfiltering/severityFiltering'
 weight = 3
 params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'itsmVendor'
+parent = 'usage'
+name = 'ITSM Setup'
+pageRef = '/usage/itsm'
+weight = 4
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'solarwinds'
+parent = 'itsmVendor'
+name = 'Solarwinds'
+pageRef = '/usage/itsm/solarwinds'
+weight = 4
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'reference'
+parent = 'home'
+name = 'Reference'
+pageRef = '/reference'
+weight = 4
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'alertschema'
+parent = 'reference'
+name = 'Alert Schema'
+pageRef = '/reference/alertschema'
+weight = 1
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'api'
+parent = 'reference'
+name = 'API'
+pageRef = '/reference/api'
+weight = 1
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'environmentvariables'
+parent = 'reference'
+name = 'Environment Variables'
+pageRef = '/reference/environmentvariables'
+weight = 1
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'incidentfields'
+parent = 'reference'
+name = 'Incident Fields'
+pageRef = '/reference/incidentfields'
+weight = 1
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'roadmap'
+parent = 'reference'
+name = 'Roadmap'
+pageRef = '/reference/roadmap'
+weight = 1
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'security'
+parent = 'reference'
+name = 'Security'
+pageRef = '/reference/security'
+weight = 1
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'troubleshooting'
+parent = 'home'
+name = 'Troubleshooting'
+pageRef = '/troubleshooting'
+weight = 5
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'notickets'
+parent = 'troubleshooting'
+name = 'Alert not creating tickets'
+pageRef = '/troubleshooting/alert-not-creating-tickets'
+weight = 3
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'commonissues'
+parent = 'troubleshooting'
+name = 'Common issues'
+pageRef = '/troubleshooting/common-issues'
+weight = 1
+params = { alwaysopen = true, collapsibleMenu = true }
+
+[[menu.defined]]
+identifier = 'deploymenterrors'
+parent = 'troubleshooting'
+name = 'Deployment errors'
+pageRef = '/troubleshooting/deployment-errors'
+weight = 2
+params = { alwaysopen = true, collapsibleMenu = true }

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Relearn 8.1.1+98ff131315b1d0ec86cbae2fef7a4cda5c37f526">
+    <meta name="description" content="Complete reference of what data Alert Bridge sends to SolarWinds Service Desk incidents">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:1313/images/cto_logo.png">
+    <meta name="twitter:title" content="Incident Fields Reference | Cynteo Alert Bridge Docs">
+    <meta name="twitter:description" content="Complete reference of what data Alert Bridge sends to SolarWinds Service Desk incidents">
+    <meta property="og:url" content="http://localhost:1313/reference/incidentfields/index.html">
+    <meta property="og:site_name" content="Cynteo Alert Bridge Docs">
+    <meta property="og:title" content="Incident Fields Reference | Cynteo Alert Bridge Docs">
+    <meta property="og:description" content="Complete reference of what data Alert Bridge sends to SolarWinds Service Desk incidents">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Reference Docs">
+    <meta property="og:image" content="http://localhost:1313/images/cto_logo.png">
+    <meta itemprop="name" content="Incident Fields Reference | Cynteo Alert Bridge Docs">
+    <meta itemprop="description" content="Complete reference of what data Alert Bridge sends to SolarWinds Service Desk incidents">
+    <meta itemprop="wordCount" content="859">
+    <meta itemprop="image" content="http://localhost:1313/images/cto_logo.png">
+    <title>Incident Fields Reference | Cynteo Alert Bridge Docs</title>
+    <link href="/images/favicon.png?1761923378" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1761923378" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761923378" defer></script>
+    <script src="/js/search-lunr.js?1761923378" defer></script>
+    <script src="/js/search.js?1761923378" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1761923378";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1761923378" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761923378" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761923378" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761923378" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761923378" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761923378" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761923378" rel="stylesheet">
+    <link href="/css/theme.css?1761923378" rel="stylesheet">
+    <link href="/css/format-html.css?1761923378" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/reference\/incidentfields\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=true;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/reference/incidentfields/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#incident-structure">Incident Structure</a>
+      <ul>
+        <li><a href="#basic-fields">Basic Fields</a></li>
+        <li><a href="#optional-fields">Optional Fields</a></li>
+      </ul>
+    </li>
+    <li><a href="#description-format">Description Format</a>
+      <ul>
+        <li><a href="#example-description">Example Description</a></li>
+        <li><a href="#description-sections">Description Sections</a></li>
+      </ul>
+    </li>
+    <li><a href="#alert-states">Alert States</a>
+      <ul>
+        <li><a href="#state-transitions">State Transitions</a></li>
+        <li><a href="#state-descriptions">State Descriptions</a></li>
+      </ul>
+    </li>
+    <li><a href="#priority-mapping">Priority Mapping</a></li>
+    <li><a href="#category-and-subcategory">Category and Subcategory</a>
+      <ul>
+        <li><a href="#default-values">Default Values</a></li>
+        <li><a href="#auto-detection">Auto-Detection</a></li>
+      </ul>
+    </li>
+    <li><a href="#comments">Comments</a>
+      <ul>
+        <li><a href="#when-comments-are-added">When Comments Are Added</a></li>
+        <li><a href="#example-comment">Example Comment</a></li>
+        <li><a href="#smart-deduplication">Smart Deduplication</a></li>
+      </ul>
+    </li>
+    <li><a href="#resolution-fields">Resolution Fields</a>
+      <ul>
+        <li><a href="#incident-updates">Incident Updates</a></li>
+        <li><a href="#resolution-description-includes">Resolution Description Includes</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#requester-email">Requester Email</a>
+      <ul>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+      </ul>
+    </li>
+    <li><a href="#field-limits">Field Limits</a>
+      <ul>
+        <li><a href="#character-limits">Character Limits</a></li>
+        <li><a href="#array-limits">Array Limits</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-not-included">Data Not Included</a></li>
+    <li><a href="#custom-fields-coming-soon">Custom Fields (Coming Soon)</a></li>
+    <li><a href="#example-full-incident-payload">Example: Full Incident Payload</a></li>
+    <li><a href="#see-also">See Also</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Cynteo Alert Bridge Docs</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/reference/index.html"><span itemprop="name">Reference Docs</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Incident Fields Reference</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><a href="/reference/index.html" title="Reference Docs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><a href="/reference/security/index.html" title="Security Overview (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable reference" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="incident-fields-reference">Incident Fields Reference</h1>
+
+<h1 id="incident-fields-reference">Incident Fields Reference</h1>
+<p>Complete reference of what data Alert Bridge sends to SolarWinds Service Desk incidents.</p>
+<hr>
+<h2 id="incident-structure">Incident Structure</h2>
+<p>Every incident created by Alert Bridge includes:</p>
+<h3 id="basic-fields">Basic Fields</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Source</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>name</strong></td>
+          <td>String</td>
+          <td>Azure alert rule name</td>
+          <td><code>Azure Alert: High CPU Usage</code></td>
+      </tr>
+      <tr>
+          <td><strong>priority</strong></td>
+          <td>String</td>
+          <td>Severity mapping</td>
+          <td><code>High</code>, <code>Medium</code>, <code>Low</code></td>
+      </tr>
+      <tr>
+          <td><strong>description</strong></td>
+          <td>HTML</td>
+          <td>Enriched alert data</td>
+          <td>See <a href="/reference/incidentfields/index.html#description-format">Description Format</a></td>
+      </tr>
+      <tr>
+          <td><strong>category</strong></td>
+          <td>Object</td>
+          <td>Configuration</td>
+          <td><code>{&quot;name&quot;: &quot;Infrastructure&quot;}</code></td>
+      </tr>
+      <tr>
+          <td><strong>subcategory</strong></td>
+          <td>Object</td>
+          <td>Configuration</td>
+          <td><code>{&quot;name&quot;: &quot;Azure Monitor&quot;}</code></td>
+      </tr>
+      <tr>
+          <td><strong>requester</strong></td>
+          <td>Object</td>
+          <td>Configuration</td>
+          <td><code>{&quot;email&quot;: &quot;azure@company.com&quot;}</code></td>
+      </tr>
+      <tr>
+          <td><strong>state</strong></td>
+          <td>String</td>
+          <td>Alert condition</td>
+          <td><code>New</code>, <code>In Progress</code>, <code>Resolved</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="optional-fields">Optional Fields</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Type</th>
+          <th>When Included</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>group_assignee</strong></td>
+          <td>Object</td>
+          <td>If configured</td>
+          <td><code>{&quot;name&quot;: &quot;Cloud Ops&quot;}</code></td>
+      </tr>
+      <tr>
+          <td><strong>resolution_description</strong></td>
+          <td>String</td>
+          <td>On resolution</td>
+          <td><code>Resolved automatically by Azure Monitor...</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="description-format">Description Format</h2>
+<p>The incident description is rich HTML containing all alert context:</p>
+<h3 id="example-description">Example Description</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;[ALERT] Azure Monitor Alert&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">hr</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Alert Information:&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Name:&lt;/<span style="color:#f92672">strong</span>&gt; High CPU Usage&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Severity:&lt;/<span style="color:#f92672">strong</span>&gt; Sev1&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Status:&lt;/<span style="color:#f92672">strong</span>&gt; Fired&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Signal Type:&lt;/<span style="color:#f92672">strong</span>&gt; Metric&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Monitoring Service:&lt;/<span style="color:#f92672">strong</span>&gt; Platform&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Fired At:&lt;/<span style="color:#f92672">strong</span>&gt; 2025-10-29T10:00:00Z&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Affected Resource:&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Name:&lt;/<span style="color:#f92672">strong</span>&gt; vm-prod-web-01&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Type:&lt;/<span style="color:#f92672">strong</span>&gt; Microsoft.Compute/virtualMachines&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Resource Group:&lt;/<span style="color:#f92672">strong</span>&gt; rg-production&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Subscription:&lt;/<span style="color:#f92672">strong</span>&gt; sub-12345678-abcd-...&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Metric Details:&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Metric:&lt;/<span style="color:#f92672">strong</span>&gt; Percentage CPU&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Condition:&lt;/<span style="color:#f92672">strong</span>&gt; Average GreaterThan 80&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Current Value:&lt;/<span style="color:#f92672">strong</span>&gt; 95.5&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Evaluation Window:&lt;/<span style="color:#f92672">strong</span>&gt; PT5M&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">em</span>&gt;Period: 2025-10-29T09:55:00Z to 2025-10-29T10:00:00Z&lt;/<span style="color:#f92672">em</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">hr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Quick Actions:&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://portal.azure.com/#...&#34;</span>&gt;[VIEW] View This Alert Instance&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://portal.azure.com/#...&#34;</span>&gt;[CONFIGURE] Edit Alert Rule Settings&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">li</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://portal.azure.com/#...&#34;</span>&gt;[RESOURCE] View Affected Resource in Portal&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">ul</span>&gt;</span></span></code></pre></div>
+<h3 id="description-sections">Description Sections</h3>
+<h4 id="1-alert-information">1. Alert Information</h4>
+<ul>
+<li>Alert rule name</li>
+<li>Severity (Sev0-Sev3)</li>
+<li>Monitor condition (Fired/Resolved)</li>
+<li>Signal type (Metric/Log/Activity Log)</li>
+<li>When it fired</li>
+</ul>
+<h4 id="2-affected-resource">2. Affected Resource</h4>
+<ul>
+<li>Resource name</li>
+<li>Resource type</li>
+<li>Resource group</li>
+<li>Subscription ID</li>
+</ul>
+<h4 id="3-metric-details-for-metric-alerts">3. Metric Details (for Metric Alerts)</h4>
+<ul>
+<li>Metric name</li>
+<li>Threshold condition</li>
+<li>Current value</li>
+<li>Time aggregation method</li>
+</ul>
+<h4 id="4-log-search-details-for-log-alerts">4. Log Search Details (for Log Alerts)</h4>
+<ul>
+<li>Query results count</li>
+<li>Search query</li>
+<li>Links to log results</li>
+</ul>
+<h4 id="5-activity-log-details-for-activity-alerts">5. Activity Log Details (for Activity Alerts)</h4>
+<ul>
+<li>Operation name</li>
+<li>Status</li>
+<li>Caller</li>
+</ul>
+<h4 id="6-alert-history-if-repeat-occurrence">6. Alert History (if repeat occurrence)</h4>
+<ul>
+<li>Number of occurrences</li>
+<li>First occurrence time</li>
+<li>Pattern indicator</li>
+</ul>
+<h4 id="7-quick-action-links">7. Quick Action Links</h4>
+<ul>
+<li>View alert in Azure Portal</li>
+<li>Edit alert rule</li>
+<li>View affected resource</li>
+</ul>
+<hr>
+<h2 id="alert-states">Alert States</h2>
+<h3 id="state-transitions">State Transitions</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>New → In Progress → Resolved
+ ↑                      |
+ └──────────────────────┘
+    (New occurrence)</code></pre></div>
+<h3 id="state-descriptions">State Descriptions</h3>
+<table>
+  <thead>
+      <tr>
+          <th>State</th>
+          <th>When</th>
+          <th>Incident Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>New</strong></td>
+          <td>First time alert fires</td>
+          <td>Create incident</td>
+      </tr>
+      <tr>
+          <td><strong>In Progress</strong></td>
+          <td>Alert fires again (update)</td>
+          <td>Update incident</td>
+      </tr>
+      <tr>
+          <td><strong>Resolved</strong></td>
+          <td>Alert condition clears</td>
+          <td>Resolve incident</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="priority-mapping">Priority Mapping</h2>
+<p>Default mapping (configurable):</p>
+<table>
+  <thead>
+      <tr>
+          <th>Azure Severity</th>
+          <th>SolarWinds Priority</th>
+          <th>Typical Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Sev0</td>
+          <td>High</td>
+          <td>Critical outages, data loss</td>
+      </tr>
+      <tr>
+          <td>Sev1</td>
+          <td>High</td>
+          <td>Major functionality impaired</td>
+      </tr>
+      <tr>
+          <td>Sev2</td>
+          <td>Medium</td>
+          <td>Performance degradation</td>
+      </tr>
+      <tr>
+          <td>Sev3</td>
+          <td>Low</td>
+          <td>Informational, capacity planning</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Customize:</strong> See <a href="../guides/priority-mapping">Priority Mapping Guide</a></p>
+<hr>
+<h2 id="category-and-subcategory">Category and Subcategory</h2>
+<h3 id="default-values">Default Values</h3>
+<ul>
+<li><strong>Category:</strong> Infrastructure</li>
+<li><strong>Subcategory:</strong> Azure Monitor</li>
+</ul>
+<h3 id="auto-detection">Auto-Detection</h3>
+<p>Alert Bridge automatically detects category based on resource type:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Resource Type</th>
+          <th>Category</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Virtual Machines</td>
+          <td>Infrastructure</td>
+      </tr>
+      <tr>
+          <td>App Service</td>
+          <td>Application</td>
+      </tr>
+      <tr>
+          <td>SQL Database</td>
+          <td>Database</td>
+      </tr>
+      <tr>
+          <td>Storage Account</td>
+          <td>Storage</td>
+      </tr>
+      <tr>
+          <td>Virtual Network</td>
+          <td>Network</td>
+      </tr>
+      <tr>
+          <td>Key Vault</td>
+          <td>Security</td>
+      </tr>
+      <tr>
+          <td>Kubernetes</td>
+          <td>Platform</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Override:</strong> Configure during deployment</p>
+<hr>
+<h2 id="comments">Comments</h2>
+<h3 id="when-comments-are-added">When Comments Are Added</h3>
+<p>Comments update existing incidents instead of creating new ones:</p>
+<p><strong>Conditions for adding comment:</strong></p>
+<ol>
+<li>Alert fires again on same resource</li>
+<li>Time since last update &gt; 5 minutes (configurable)</li>
+<li>OR metric value changed &gt; 10%</li>
+</ol>
+<p><strong>Comment includes:</strong></p>
+<ul>
+<li>Current time</li>
+<li>Monitor condition</li>
+<li>Current metric value</li>
+<li>Change from last value</li>
+<li>Occurrence number</li>
+<li>Links to Azure Portal</li>
+</ul>
+<h3 id="example-comment">Example Comment</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>[UPDATE] Alert Status Update
+
+• Monitor Condition: Fired
+• Time: 2025-10-29T10:15:00Z
+• Current Value: 92.3 (+2.1 from last)
+• Occurrence: #3
+• Pattern: Recurring issue (3 occurrences)
+
+Alert continues to fire. Monitoring situation.
+
+[View Alert] | [Edit Rule]</code></pre></div>
+<h3 id="smart-deduplication">Smart Deduplication</h3>
+<p>To prevent comment spam:</p>
+<ul>
+<li>Minimum 5 minutes between comments (configurable)</li>
+<li>Only comment if metric changed significantly</li>
+<li>Resolution uses <code>resolution_description</code> instead</li>
+</ul>
+<hr>
+<h2 id="resolution-fields">Resolution Fields</h2>
+<p>When alert resolves:</p>
+<h3 id="incident-updates">Incident Updates</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#e6db74">&#34;Resolved&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;resolution_description&#34;</span>: <span style="color:#e6db74">&#34;Resolved automatically by Azure Monitor. Alert condition returned to normal.&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h3 id="resolution-description-includes">Resolution Description Includes</h3>
+<ul>
+<li>Resolution time</li>
+<li>Total duration</li>
+<li>Total occurrences</li>
+<li>Automatic resolution note</li>
+</ul>
+<h3 id="example">Example</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>[RESOLVED] Alert Cleared by Azure Monitor
+
+• Resolution Time: 2025-10-29T10:30:00Z
+• Total Duration: 30 minutes
+• Total Occurrences: 3
+• Alert automatically cleared - condition returned to normal
+
+This incident has been automatically resolved.
+
+[View Alert Details]</code></pre></div>
+<hr>
+<h2 id="requester-email">Requester Email</h2>
+<p>The requester is the &ldquo;who created this incident&rdquo; field in SolarWinds.</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>Must be valid email</li>
+<li>Should exist in SolarWinds as a user OR</li>
+<li>SolarWinds auto-creates user (if enabled)</li>
+</ul>
+<h3 id="best-practices">Best Practices</h3>
+<p><strong>Option A: Service Account</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>azure-monitor@company.com</code></pre></div>
+<p><strong>Option B: Team Inbox</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>cloudops@company.com</code></pre></div>
+<p><strong>Option C: Shared Account</strong></p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>itsm-automation@company.com</code></pre></div>
+<p><strong>Not recommended:</strong></p>
+<ul>
+<li>Individual personal emails</li>
+<li>Distribution lists (unless they&rsquo;re users in SolarWinds)</li>
+</ul>
+<hr>
+<h2 id="field-limits">Field Limits</h2>
+<h3 id="character-limits">Character Limits</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Max Length</th>
+          <th>Truncation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>name</td>
+          <td>255 chars</td>
+          <td><code>...</code> added</td>
+      </tr>
+      <tr>
+          <td>description</td>
+          <td>32,000 chars</td>
+          <td>Rare, full alerts fit</td>
+      </tr>
+      <tr>
+          <td>category</td>
+          <td>100 chars</td>
+          <td>Error if exceeded</td>
+      </tr>
+      <tr>
+          <td>priority</td>
+          <td>20 chars</td>
+          <td>Predefined values</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="array-limits">Array Limits</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Max Items</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>alertTargetIDs</td>
+          <td>100 resources</td>
+      </tr>
+      <tr>
+          <td>configurationItems</td>
+          <td>100 items</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="data-not-included">Data Not Included</h2>
+<p>Alert Bridge does NOT send:</p>
+<ul>
+<li>❌ Azure subscription credentials</li>
+<li>❌ Resource access keys</li>
+<li>❌ Connection strings</li>
+<li>❌ Secrets from Key Vault</li>
+<li>❌ VM passwords</li>
+<li>❌ Storage account keys</li>
+</ul>
+<p>Only <strong>metadata</strong> and <strong>metrics</strong> are sent to SolarWinds.</p>
+<hr>
+<h2 id="custom-fields-coming-soon">Custom Fields (Coming Soon)</h2>
+<p>Future versions will support:</p>
+<ul>
+<li>Custom incident fields</li>
+<li>Additional tags</li>
+<li>Custom descriptions</li>
+<li>Field mapping rules</li>
+</ul>
+<p><a href="/reference/roadmap/index.html">View Roadmap</a></p>
+<hr>
+<h2 id="example-full-incident-payload">Example: Full Incident Payload</h2>
+<p>What Alert Bridge sends to SolarWinds API:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;incident&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Azure Alert: High CPU Usage&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;priority&#34;</span>: <span style="color:#e6db74">&#34;High&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;&lt;p&gt;&lt;strong&gt;[ALERT] Azure Monitor Alert&lt;/strong&gt;&lt;/p&gt;...&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;category&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Infrastructure&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;subcategory&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Azure Monitor&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;requester&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;azure-monitor@company.com&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;group_assignee&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Cloud Operations&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<hr>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="./alert-schema">Alert Schema</a> - Input from Azure Monitor</li>
+<li><a href="./environment-variables">Environment Variables</a> - Configuration options</li>
+<li><a href="../guides/priority-mapping">Priority Mapping</a> - Customize mapping</li>
+<li><a href="https://help.samanage.com/s/article/Incidents-API" rel="external">SolarWinds API</a> - Official docs</li>
+</ul>
+<hr>
+<p><strong>Questions?</strong> Contact <a href="mailto:support@cynteocloud.com" rel="external">support@cynteocloud.com</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<img src="/images/cto_logo.png" width="50" height="50" style="vertical-align:bottom">
+<a id="R-logo" class="R-default" href="/index.html">          Cynteo Alert Bridge Docs</a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-defined">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/overview/index.html"><a class="padding" href="/overview/index.html">Overview</a></li>
+            <li class="" data-nav-url="/quicklinks/index.html"><a class="padding" href="/quicklinks/index.html">Quick Links</a></li>
+            <li class="alwaysopen " data-nav-url="/usage/index.html"><input type="checkbox" id="R-section-9366282e11c151558bdfaab4a264aa1b" aria-controls="R-subsections-9366282e11c151558bdfaab4a264aa1b" checked><label for="R-section-9366282e11c151558bdfaab4a264aa1b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Usage Guide</span></label><a class="padding" href="/usage/index.html">Usage Guide</a><ul id="R-subsections-9366282e11c151558bdfaab4a264aa1b" class="collapsible-menu">
+            <li class="" data-nav-url="/usage/actiongroup/actiongroup/index.html"><a class="padding" href="/usage/actiongroup/actiongroup/index.html">Action Group Setup</a></li>
+            <li class="" data-nav-url="/usage/prioritymapping/prioritymapping/index.html"><a class="padding" href="/usage/prioritymapping/prioritymapping/index.html">Priority Mapping Setup</a></li>
+            <li class="" data-nav-url="/usage/severityfiltering/severityfiltering/index.html"><a class="padding" href="/usage/severityfiltering/severityfiltering/index.html">Severity Filtering Setup</a></li>
+            <li class="alwaysopen " data-nav-url="/usage/itsm/index.html"><input type="checkbox" id="R-section-ac4e6ec202e4740b32129ca1367afd01" aria-controls="R-subsections-ac4e6ec202e4740b32129ca1367afd01" checked><label for="R-section-ac4e6ec202e4740b32129ca1367afd01"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ITSM Setup</span></label><a class="padding" href="/usage/itsm/index.html">ITSM Setup</a><ul id="R-subsections-ac4e6ec202e4740b32129ca1367afd01" class="collapsible-menu">
+            <li class="" data-nav-url="/usage/itsm/solarwinds/index.html"><a class="padding" href="/usage/itsm/solarwinds/index.html">Solarwinds</a></li></ul></li></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/reference/index.html"><input type="checkbox" id="R-section-b8af13ea9c8fe890c9979a1fa8dbde22" aria-controls="R-subsections-b8af13ea9c8fe890c9979a1fa8dbde22" checked><label for="R-section-b8af13ea9c8fe890c9979a1fa8dbde22"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Reference</span></label><a class="padding" href="/reference/index.html">Reference</a><ul id="R-subsections-b8af13ea9c8fe890c9979a1fa8dbde22" class="collapsible-menu">
+            <li class="" data-nav-url="/reference/alertschema/index.html"><a class="padding" href="/reference/alertschema/index.html">Alert Schema</a></li>
+            <li class="" data-nav-url="/reference/api/index.html"><a class="padding" href="/reference/api/index.html">API</a></li>
+            <li class="" data-nav-url="/reference/environmentvariables/index.html"><a class="padding" href="/reference/environmentvariables/index.html">Environment Variables</a></li>
+            <li class="active " data-nav-url="/reference/incidentfields/index.html"><a class="padding" href="/reference/incidentfields/index.html">Incident Fields</a></li>
+            <li class="" data-nav-url="/reference/roadmap/index.html"><a class="padding" href="/reference/roadmap/index.html">Roadmap</a></li>
+            <li class="" data-nav-url="/reference/security/index.html"><a class="padding" href="/reference/security/index.html">Security</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/troubleshooting/index.html"><input type="checkbox" id="R-section-e09245effc62059e51f926fad603e413" aria-controls="R-subsections-e09245effc62059e51f926fad603e413" checked><label for="R-section-e09245effc62059e51f926fad603e413"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Troubleshooting</span></label><a class="padding" href="/troubleshooting/index.html">Troubleshooting</a><ul id="R-subsections-e09245effc62059e51f926fad603e413" class="collapsible-menu">
+            <li class="" data-nav-url="/troubleshooting/common-issues/index.html"><a class="padding" href="/troubleshooting/common-issues/index.html">Common issues</a></li>
+            <li class="" data-nav-url="/troubleshooting/deployment-errors/index.html"><a class="padding" href="/troubleshooting/deployment-errors/index.html">Deployment errors</a></li>
+            <li class="" data-nav-url="/troubleshooting/alert-not-creating-tickets/index.html"><a class="padding" href="/troubleshooting/alert-not-creating-tickets/index.html">Alert not creating tickets</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Zen Light/Dark</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1761923378" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761923378" defer></script>
+    <script src="/js/theme.js?1761923378" defer></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ITSM Setup | Cynteo Alert Bridge Docs</title>
+    <link>http://localhost:1313/usage/itsm/index.html</link>
+    <description>Usage Guidance for the Cynteo Alert Brige</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/usage/itsm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SolarWinds API Token</title>
+      <link>http://localhost:1313/usage/itsm/solarwinds/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/usage/itsm/solarwinds/index.html</guid>
+      <description>How to generate and manage SolarWinds Service Desk API tokens</description>
+    </item>
+  </channel>
+</rss>

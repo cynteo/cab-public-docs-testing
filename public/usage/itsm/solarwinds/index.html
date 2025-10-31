@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.152.2">
+    <meta name="generator" content="Relearn 8.1.1+98ff131315b1d0ec86cbae2fef7a4cda5c37f526">
+    <meta name="description" content="How to generate and manage SolarWinds Service Desk API tokens">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:1313/images/cto_logo.png">
+    <meta name="twitter:title" content="SolarWinds API Token | Cynteo Alert Bridge Docs">
+    <meta name="twitter:description" content="How to generate and manage SolarWinds Service Desk API tokens">
+    <meta property="og:url" content="http://localhost:1313/usage/itsm/solarwinds/index.html">
+    <meta property="og:site_name" content="Cynteo Alert Bridge Docs">
+    <meta property="og:title" content="SolarWinds API Token | Cynteo Alert Bridge Docs">
+    <meta property="og:description" content="How to generate and manage SolarWinds Service Desk API tokens">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Usage Guide">
+    <meta property="og:image" content="http://localhost:1313/images/cto_logo.png">
+    <meta itemprop="name" content="SolarWinds API Token | Cynteo Alert Bridge Docs">
+    <meta itemprop="description" content="How to generate and manage SolarWinds Service Desk API tokens">
+    <meta itemprop="wordCount" content="801">
+    <meta itemprop="image" content="http://localhost:1313/images/cto_logo.png">
+    <title>SolarWinds API Token | Cynteo Alert Bridge Docs</title>
+    <link href="/images/favicon.png?1761924435" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1761924435" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1761924435" defer></script>
+    <script src="/js/search-lunr.js?1761924435" defer></script>
+    <script src="/js/search.js?1761924435" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1761924435";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1761924435" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1761924435" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1761924435" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1761924435" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761924435" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1761924435" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1761924435" rel="stylesheet">
+    <link href="/css/theme.css?1761924435" rel="stylesheet">
+    <link href="/css/format-html.css?1761924435" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/usage\/itsm\/solarwinds\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=true;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/usage/itsm/solarwinds/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#what-is-an-api-token">What is an API Token?</a></li>
+    <li><a href="#generating-a-token">Generating a Token</a>
+      <ul>
+        <li><a href="#step-1-log-into-solarwinds">Step 1: Log into SolarWinds</a></li>
+        <li><a href="#step-2-navigate-to-api-settings">Step 2: Navigate to API Settings</a></li>
+        <li><a href="#step-3-create-token">Step 3: Create Token</a></li>
+        <li><a href="#step-4-copy-token">Step 4: Copy Token</a></li>
+      </ul>
+    </li>
+    <li><a href="#required-permissions">Required Permissions</a>
+      <ul>
+        <li><a href="#minimal-permissions">Minimal Permissions</a></li>
+      </ul>
+    </li>
+    <li><a href="#token-format">Token Format</a>
+      <ul>
+        <li><a href="#full-token">Full Token</a></li>
+        <li><a href="#token-parts">Token Parts</a></li>
+      </ul>
+    </li>
+    <li><a href="#configuring-alert-bridge">Configuring Alert Bridge</a>
+      <ul>
+        <li><a href="#option-1-direct-not-recommended">Option 1: Direct (Not Recommended)</a></li>
+        <li><a href="#option-2-azure-key-vault-recommended">Option 2: Azure Key Vault (Recommended)</a></li>
+      </ul>
+    </li>
+    <li><a href="#testing-the-token">Testing the Token</a>
+      <ul>
+        <li><a href="#via-curl">Via cURL</a></li>
+        <li><a href="#via-powershell">Via PowerShell</a></li>
+        <li><a href="#via-logic-app-test">Via Logic App Test</a></li>
+      </ul>
+    </li>
+    <li><a href="#token-security">Token Security</a>
+      <ul>
+        <li><a href="#best-practices">Best Practices</a></li>
+        <li><a href="#rotation-schedule">Rotation Schedule</a></li>
+        <li><a href="#compromised-token">Compromised Token</a></li>
+      </ul>
+    </li>
+    <li><a href="#token-management">Token Management</a>
+      <ul>
+        <li><a href="#viewing-active-tokens">Viewing Active Tokens</a></li>
+        <li><a href="#revoking-tokens">Revoking Tokens</a></li>
+        <li><a href="#updating-token-in-alert-bridge">Updating Token in Alert Bridge</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#401-unauthorized">401 Unauthorized</a></li>
+        <li><a href="#403-forbidden">403 Forbidden</a></li>
+        <li><a href="#token-not-found-in-key-vault">Token Not Found in Key Vault</a></li>
+      </ul>
+    </li>
+    <li><a href="#api-limits">API Limits</a></li>
+    <li><a href="#see-also">See Also</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Cynteo Alert Bridge</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/usage/index.html"><span itemprop="name">Usage Guide</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/usage/itsm/index.html"><span itemprop="name">ITSM Setup Guide</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">SolarWinds API Token</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><a href="/usage/itsm/index.html" title="ITSM Setup (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle"><span><i class="fa-fw fas fa-chevron-right"></i></span></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn interactive cstyle link noborder notitle"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable usage" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="solarwinds-api-token">SolarWinds API Token</h1>
+
+<h1 id="solarwinds-api-token">SolarWinds API Token</h1>
+<p>Complete guide to generating and managing your SolarWinds Service Desk API token for Alert Bridge.</p>
+<hr>
+<h2 id="what-is-an-api-token">What is an API Token?</h2>
+<p>An API token is a secure authentication credential that allows Alert Bridge to:</p>
+<ul>
+<li>✅ Create incidents in SolarWinds</li>
+<li>✅ Update existing incidents</li>
+<li>✅ Add comments to incidents</li>
+<li>✅ Resolve incidents when alerts clear</li>
+</ul>
+<hr>
+<h2 id="generating-a-token">Generating a Token</h2>
+<h3 id="step-1-log-into-solarwinds">Step 1: Log into SolarWinds</h3>
+<ol>
+<li>Go to your SolarWinds Service Desk URL</li>
+<li>Log in with administrator credentials</li>
+</ol>
+<h3 id="step-2-navigate-to-api-settings">Step 2: Navigate to API Settings</h3>
+<p><strong>Option A: Modern Interface</strong></p>
+<ol>
+<li>Click your <strong>profile</strong> (top-right)</li>
+<li>Select <strong>&ldquo;Developer&rdquo; or &ldquo;API&rdquo;</strong></li>
+<li>Click <strong>&ldquo;Tokens&rdquo;</strong> or <strong>&ldquo;API Access&rdquo;</strong></li>
+</ol>
+<p><strong>Option B: Classic Interface</strong></p>
+<ol>
+<li>Go to <strong>Setup</strong> → <strong>Account</strong></li>
+<li>Find <strong>&ldquo;API Tokens&rdquo;</strong> or <strong>&ldquo;Integrations&rdquo;</strong></li>
+<li>Click <strong>&ldquo;Generate New Token&rdquo;</strong></li>
+</ol>
+<h3 id="step-3-create-token">Step 3: Create Token</h3>
+<ol>
+<li>Click <strong>&ldquo;Generate New Token&rdquo;</strong> or <strong>&ldquo;Create Token&rdquo;</strong></li>
+<li><strong>Name:</strong> <code>Cynteo Alert Bridge</code></li>
+<li><strong>Description:</strong> <code>Azure Monitor integration</code></li>
+<li><strong>Permissions:</strong> Select required permissions (see below)</li>
+<li>Click <strong>&ldquo;Generate&rdquo;</strong> or <strong>&ldquo;Create&rdquo;</strong></li>
+</ol>
+<h3 id="step-4-copy-token">Step 4: Copy Token</h3>
+<p>⚠️ <strong>Important:</strong> Copy the token NOW - you won&rsquo;t see it again!</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>Bearer eyJ0eXAiOiJKV1QiLCJhbGc...</code></pre></div>
+<p>Store securely in:</p>
+<ul>
+<li>Azure Key Vault (recommended)</li>
+<li>Password manager</li>
+<li>Secure note</li>
+</ul>
+<hr>
+<h2 id="required-permissions">Required Permissions</h2>
+<p>The API token needs these permissions:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Permission</th>
+          <th>Required</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Read Incidents</strong></td>
+          <td>✅ Yes</td>
+          <td>Check for existing incidents (dedup)</td>
+      </tr>
+      <tr>
+          <td><strong>Create Incidents</strong></td>
+          <td>✅ Yes</td>
+          <td>Create new incidents from alerts</td>
+      </tr>
+      <tr>
+          <td><strong>Update Incidents</strong></td>
+          <td>✅ Yes</td>
+          <td>Update incidents when alerts fire again</td>
+      </tr>
+      <tr>
+          <td><strong>Add Comments</strong></td>
+          <td>✅ Yes</td>
+          <td>Add alert updates as comments</td>
+      </tr>
+      <tr>
+          <td><strong>Resolve Incidents</strong></td>
+          <td>⚠️ Optional</td>
+          <td>Auto-resolve when alerts clear</td>
+      </tr>
+      <tr>
+          <td><strong>Delete Incidents</strong></td>
+          <td>❌ No</td>
+          <td>Not required (security best practice)</td>
+      </tr>
+      <tr>
+          <td><strong>Manage Users</strong></td>
+          <td>❌ No</td>
+          <td>Not required</td>
+      </tr>
+      <tr>
+          <td><strong>Admin Access</strong></td>
+          <td>❌ No</td>
+          <td>Not required</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="minimal-permissions">Minimal Permissions</h3>
+<p>For maximum security, only grant:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>- incidents:read
+- incidents:create
+- incidents:update
+- comments:create</code></pre></div>
+<hr>
+<h2 id="token-format">Token Format</h2>
+<h3 id="full-token">Full Token</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zYW1hbmFnZS5jb20iLCJpYXQiOjE2MTYxNjE2MTYsImV4cCI6MTY0NzY5NzYxNiwianRpIjoiYWJjMTIzIn0.signature</code></pre></div>
+<h3 id="token-parts">Token Parts</h3>
+<ul>
+<li><strong>Prefix:</strong> <code>Bearer </code> (with space)</li>
+<li><strong>Type:</strong> JWT (JSON Web Token)</li>
+<li><strong>Parts:</strong> Header.Payload.Signature</li>
+</ul>
+<hr>
+<h2 id="configuring-alert-bridge">Configuring Alert Bridge</h2>
+<h3 id="option-1-direct-not-recommended">Option 1: Direct (Not Recommended)</h3>
+<p>Store token directly in Logic App configuration:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;SOLARWINDS_API_TOKEN&#34;</span>: <span style="color:#e6db74">&#34;Bearer eyJ0eXAiOi...&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>⚠️ <strong>Not recommended</strong> - Token visible in Logic App configuration</p>
+<h3 id="option-2-azure-key-vault-recommended">Option 2: Azure Key Vault (Recommended)</h3>
+<p>Store token in Key Vault:</p>
+<h4 id="step-1-add-to-key-vault">Step 1: Add to Key Vault</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az keyvault secret set <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --vault-name your-key-vault <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name solarwinds-api-token <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --value <span style="color:#e6db74">&#34;Bearer eyJ0eXAiOi...&#34;</span></span></span></code></pre></div>
+<h4 id="step-2-grant-logic-app-access">Step 2: Grant Logic App Access</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Enable Managed Identity on Logic App</span>
+</span></span><span style="display:flex;"><span>az logicapp identity assign <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name your-logic-app <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --resource-group your-rg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Grant Key Vault access</span>
+</span></span><span style="display:flex;"><span>az keyvault set-policy <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name your-key-vault <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --object-id &lt;logic-app-identity-id&gt; <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --secret-permissions get</span></span></code></pre></div>
+<h4 id="step-3-reference-in-logic-app">Step 3: Reference in Logic App</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;SOLARWINDS_API_TOKEN&#34;</span>: <span style="color:#e6db74">&#34;@Microsoft.KeyVault(SecretUri=https://your-vault.vault.azure.net/secrets/solarwinds-api-token/)&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<hr>
+<h2 id="testing-the-token">Testing the Token</h2>
+<h3 id="via-curl">Via cURL</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X GET <span style="color:#e6db74">&#34;https://api.samanage.com/incidents.json&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;X-Samanage-Authorization: Bearer YOUR_TOKEN&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -H <span style="color:#e6db74">&#34;Accept: application/json&#34;</span></span></span></code></pre></div>
+<p><strong>Expected:</strong> List of incidents (200 OK)</p>
+<p><strong>Error 401:</strong> Token invalid or expired</p>
+<h3 id="via-powershell">Via PowerShell</h3>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$headers = @{
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;X-Samanage-Authorization&#34;</span> = <span style="color:#e6db74">&#34;Bearer YOUR_TOKEN&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Accept&#34;</span> = <span style="color:#e6db74">&#34;application/json&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Invoke-RestMethod -Uri <span style="color:#e6db74">&#34;https://api.samanage.com/incidents.json&#34;</span> -Headers $headers</span></span></code></pre></div>
+<h3 id="via-logic-app-test">Via Logic App Test</h3>
+<ol>
+<li>Deploy Logic App with token</li>
+<li>Trigger a test alert</li>
+<li>Check Logic App run history</li>
+<li>Look for SolarWinds API errors</li>
+</ol>
+<hr>
+<h2 id="token-security">Token Security</h2>
+<h3 id="best-practices">Best Practices</h3>
+<ol>
+<li><strong>Use Key Vault</strong> - Never store in plain text</li>
+<li><strong>Rotate Regularly</strong> - Update every 90 days</li>
+<li><strong>Minimal Permissions</strong> - Only grant what&rsquo;s needed</li>
+<li><strong>Monitor Usage</strong> - Track API calls for anomalies</li>
+<li><strong>Separate Tokens</strong> - Different tokens for dev/prod</li>
+</ol>
+<h3 id="rotation-schedule">Rotation Schedule</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Environment</th>
+          <th>Rotation Frequency</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Production</td>
+          <td>Every 90 days</td>
+      </tr>
+      <tr>
+          <td>Staging</td>
+          <td>Every 180 days</td>
+      </tr>
+      <tr>
+          <td>Development</td>
+          <td>Annual</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="compromised-token">Compromised Token</h3>
+<p>If token is compromised:</p>
+<ol>
+<li><strong>Immediately Revoke</strong> in SolarWinds</li>
+<li><strong>Generate New Token</strong></li>
+<li><strong>Update Key Vault</strong> with new token</li>
+<li><strong>Restart Logic App</strong></li>
+<li><strong>Review Audit Logs</strong> for unauthorized access</li>
+</ol>
+<hr>
+<h2 id="token-management">Token Management</h2>
+<h3 id="viewing-active-tokens">Viewing Active Tokens</h3>
+<ol>
+<li>SolarWinds → <strong>API Settings</strong></li>
+<li>View list of active tokens</li>
+<li>See:
+<ul>
+<li>Token name</li>
+<li>Creation date</li>
+<li>Last used date</li>
+<li>Expiration (if set)</li>
+</ul>
+</li>
+</ol>
+<h3 id="revoking-tokens">Revoking Tokens</h3>
+<ol>
+<li>Find token in list</li>
+<li>Click <strong>&ldquo;Revoke&rdquo;</strong> or <strong>&ldquo;Delete&rdquo;</strong></li>
+<li>Confirm revocation</li>
+<li>Token immediately invalidated</li>
+</ol>
+<h3 id="updating-token-in-alert-bridge">Updating Token in Alert Bridge</h3>
+<p>After generating new token:</p>
+<h4 id="if-using-key-vault">If using Key Vault:</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az keyvault secret set <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --vault-name your-key-vault <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name solarwinds-api-token <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --value <span style="color:#e6db74">&#34;Bearer NEW_TOKEN_HERE&#34;</span></span></span></code></pre></div>
+<p>Logic App automatically picks up new value within 5 minutes.</p>
+<h4 id="if-using-direct-configuration">If using direct configuration:</h4>
+<ol>
+<li>Go to Logic App → <strong>Configuration</strong></li>
+<li>Update <code>SOLARWINDS_API_TOKEN</code></li>
+<li>Click <strong>Save</strong></li>
+<li>Logic App restarts</li>
+</ol>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="401-unauthorized">401 Unauthorized</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Token expired</li>
+<li>Token revoked</li>
+<li>Token format incorrect (missing &ldquo;Bearer &ldquo;)</li>
+<li>Wrong SolarWinds instance URL</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>Generate new token</li>
+<li>Verify token format: <code>Bearer </code> + token</li>
+<li>Check SolarWinds base URL matches your instance</li>
+</ol>
+<h3 id="403-forbidden">403 Forbidden</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Token lacks required permissions</li>
+<li>User account disabled</li>
+<li>IP restrictions</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>Check token permissions in SolarWinds</li>
+<li>Verify user account is active</li>
+<li>Check API access restrictions</li>
+</ol>
+<h3 id="token-not-found-in-key-vault">Token Not Found in Key Vault</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Secret name mismatch</li>
+<li>Logic App lacks Key Vault permissions</li>
+<li>Secret deleted</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>Verify secret exists: <code>az keyvault secret show</code></li>
+<li>Check Logic App Managed Identity has access</li>
+<li>Restore secret if deleted</li>
+</ol>
+<hr>
+<h2 id="api-limits">API Limits</h2>
+<p>Be aware of SolarWinds API rate limits:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Plan</th>
+          <th>Requests/Hour</th>
+          <th>Requests/Day</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Trial</td>
+          <td>100</td>
+          <td>1,000</td>
+      </tr>
+      <tr>
+          <td>Standard</td>
+          <td>1,000</td>
+          <td>10,000</td>
+      </tr>
+      <tr>
+          <td>Premium</td>
+          <td>5,000</td>
+          <td>50,000</td>
+      </tr>
+      <tr>
+          <td>Enterprise</td>
+          <td>Custom</td>
+          <td>Custom</td>
+      </tr>
+  </tbody>
+</table>
+<p>Alert Bridge automatically respects these limits with request queuing.</p>
+<hr>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../getting-started/solarwinds-setup">SolarWinds Setup</a> - Complete setup guide</li>
+<li><a href="../reference/security">Security Overview</a> - Security best practices</li>
+<li><a href="../reference/environment-variables">Environment Variables</a> - Configuration options</li>
+</ul>
+<hr>
+<p><strong>Questions?</strong> Contact <a href="mailto:support@cynteocloud.com" rel="external">support@cynteocloud.com</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<img src="/images/cto_logo.png" width="50" height="50" style="vertical-align:bottom">
+<a id="R-logo" class="R-default" href="/index.html">          Cynteo Alert Bridge Docs</a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-defined">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/overview/index.html"><a class="padding" href="/overview/index.html">Overview</a></li>
+            <li class="" data-nav-url="/quicklinks/index.html"><a class="padding" href="/quicklinks/index.html">Quick Links</a></li>
+            <li class="parent alwaysopen " data-nav-url="/usage/index.html"><input type="checkbox" id="R-section-9366282e11c151558bdfaab4a264aa1b" aria-controls="R-subsections-9366282e11c151558bdfaab4a264aa1b" checked><label for="R-section-9366282e11c151558bdfaab4a264aa1b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Usage Guide</span></label><a class="padding" href="/usage/index.html">Usage Guide</a><ul id="R-subsections-9366282e11c151558bdfaab4a264aa1b" class="collapsible-menu">
+            <li class="" data-nav-url="/usage/actiongroup/actiongroup/index.html"><a class="padding" href="/usage/actiongroup/actiongroup/index.html">Action Group Setup</a></li>
+            <li class="" data-nav-url="/usage/prioritymapping/prioritymapping/index.html"><a class="padding" href="/usage/prioritymapping/prioritymapping/index.html">Priority Mapping Setup</a></li>
+            <li class="" data-nav-url="/usage/severityfiltering/severityfiltering/index.html"><a class="padding" href="/usage/severityfiltering/severityfiltering/index.html">Severity Filtering Setup</a></li>
+            <li class="parent alwaysopen " data-nav-url="/usage/itsm/index.html"><input type="checkbox" id="R-section-ac4e6ec202e4740b32129ca1367afd01" aria-controls="R-subsections-ac4e6ec202e4740b32129ca1367afd01" checked><label for="R-section-ac4e6ec202e4740b32129ca1367afd01"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ITSM Setup</span></label><a class="padding" href="/usage/itsm/index.html">ITSM Setup</a><ul id="R-subsections-ac4e6ec202e4740b32129ca1367afd01" class="collapsible-menu">
+            <li class="active " data-nav-url="/usage/itsm/solarwinds/index.html"><a class="padding" href="/usage/itsm/solarwinds/index.html">Solarwinds</a></li></ul></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/reference/index.html"><input type="checkbox" id="R-section-b8af13ea9c8fe890c9979a1fa8dbde22" aria-controls="R-subsections-b8af13ea9c8fe890c9979a1fa8dbde22" checked><label for="R-section-b8af13ea9c8fe890c9979a1fa8dbde22"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Reference</span></label><a class="padding" href="/reference/index.html">Reference</a><ul id="R-subsections-b8af13ea9c8fe890c9979a1fa8dbde22" class="collapsible-menu">
+            <li class="" data-nav-url="/reference/alertschema/index.html"><a class="padding" href="/reference/alertschema/index.html">Alert Schema</a></li>
+            <li class="" data-nav-url="/reference/api/index.html"><a class="padding" href="/reference/api/index.html">API</a></li>
+            <li class="" data-nav-url="/reference/environmentvariables/index.html"><a class="padding" href="/reference/environmentvariables/index.html">Environment Variables</a></li>
+            <li class="" data-nav-url="/reference/incidentfields/index.html"><a class="padding" href="/reference/incidentfields/index.html">Incident Fields</a></li>
+            <li class="" data-nav-url="/reference/roadmap/index.html"><a class="padding" href="/reference/roadmap/index.html">Roadmap</a></li>
+            <li class="" data-nav-url="/reference/security/index.html"><a class="padding" href="/reference/security/index.html">Security</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/troubleshooting/index.html"><input type="checkbox" id="R-section-e09245effc62059e51f926fad603e413" aria-controls="R-subsections-e09245effc62059e51f926fad603e413" checked><label for="R-section-e09245effc62059e51f926fad603e413"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Troubleshooting</span></label><a class="padding" href="/troubleshooting/index.html">Troubleshooting</a><ul id="R-subsections-e09245effc62059e51f926fad603e413" class="collapsible-menu">
+            <li class="" data-nav-url="/troubleshooting/common-issues/index.html"><a class="padding" href="/troubleshooting/common-issues/index.html">Common issues</a></li>
+            <li class="" data-nav-url="/troubleshooting/deployment-errors/index.html"><a class="padding" href="/troubleshooting/deployment-errors/index.html">Deployment errors</a></li>
+            <li class="" data-nav-url="/troubleshooting/alert-not-creating-tickets/index.html"><a class="padding" href="/troubleshooting/alert-not-creating-tickets/index.html">Alert not creating tickets</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Zen Light/Dark</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1761924435" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1761924435" defer></script>
+    <script src="/js/theme.js?1761924435" defer></script>
+  </body>
+</html>

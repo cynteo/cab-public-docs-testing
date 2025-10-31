@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cynteo Alert Bridge Docs</title>
+    <title>Cynteo Alert Bridge | Cynteo Alert Bridge Docs</title>
     <link>http://localhost:1313/index.html</link>
-    <description></description>
+    <description>Cynteo Alert Bridge - Bridge the gap between Azure Monitor and ITSM</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
@@ -22,11 +22,25 @@
       <description>🚀 Quick Links Get Started - Deployment guide Features - What Alert Bridge can do Troubleshooting - Common issues Support - Get help</description>
     </item>
     <item>
+      <title>Reference Docs</title>
+      <link>http://localhost:1313/reference/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/reference/index.html</guid>
+      <description>Usage Guidance for the Cynteo Alert Brige</description>
+    </item>
+    <item>
+      <title>Troubleshooting</title>
+      <link>http://localhost:1313/troubleshooting/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/troubleshooting/index.html</guid>
+      <description>Usage Guidance for the Cynteo Alert Brige</description>
+    </item>
+    <item>
       <title>Usage Guide</title>
       <link>http://localhost:1313/usage/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/usage/index.html</guid>
-      <description>Usage Guidance for the Cynteo Alert Brige</description>
+      <description></description>
     </item>
   </channel>
 </rss>
